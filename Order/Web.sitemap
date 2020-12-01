@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Home.aspx" title="Home"  description="">
+	  <siteMapNode url="AdminUserOrder.aspx" title="Customer's Orders"  description="" />
+	  <siteMapNode url="Contact.aspx" title="Contact Us"  description="" />
+	  <siteMapNode url="Error404.aspx" title="Error 404"  description="" />
+	  <siteMapNode url="Login.aspx" title="Login"  description="" />
+	  <siteMapNode url="Logout.aspx" title="Logout"  description="" />
+	  <siteMapNode url="Menu.aspx" title="Menu"  description="" />
+	  <siteMapNode url="Register.aspx" title="Register Account"  description="" />
+	  
+	  <siteMapNode url="OrderTest.aspx" title="Coffee Order"  description="">
+		  <siteMapNode url="OrderConfirm.aspx" title="Order Confirm"  description="" />
+	  </siteMapNode>
+
+	  <siteMapNode url="UserOrderRepeater.aspx" title="My Orders"  description="">
+		  <siteMapNode url="UserOrderEdit.aspx" title="Edit Order"  description="">
+			  <siteMapNode url="UserOrderEditConfirm.aspx" title="Confirm Order Edit"  description="" />
+		  </siteMapNode>
+		  <siteMapNode url="OrderDeleteConfirm.aspx" title="Confirm Order Delete"  description="" />
+	  </siteMapNode>
+  </siteMapNode>
+</siteMap>
