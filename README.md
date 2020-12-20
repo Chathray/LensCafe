@@ -1,2 +1,2 @@
 # LensCafe
- Online Coffee Bar
+## Development from the project: https://github.com/Elysu/.NET-Final-Project
