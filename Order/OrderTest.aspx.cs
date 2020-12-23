@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
@@ -24,15 +25,16 @@ namespace Order
                     Response.Redirect("Login.aspx");
                 }
 
-
                 coffeeType.DataTextField = topping.DataTextField = addOns.DataTextField = "Name";
                 coffeeType.DataValueField = topping.DataValueField = addOns.DataValueField = "Prize";
 
                 coffeeType.DataSource = GetCoffee();
+                coffeeType.Items.Clear();
                 coffeeType.DataBind();
 
                 topping.DataSource = GetTopping();
                 topping.DataBind();
+
                 addOns.DataSource = GetAddOns();
                 addOns.DataBind();
 
@@ -72,16 +74,19 @@ namespace Order
             }
         }
 
-        private DataSet GetCoffee()
+        private ICollection GetCoffee()
         {
             SqlConnection con = new SqlConnection(connectionString);
-            string q = "select * from Items where Type='CF'";
+            string q = "select Name,Prize from Items where Type='CF'";
             using (con)
             {
                 SqlDataAdapter da = new SqlDataAdapter(q, con);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                return ds;
+
+                var view = new DataView(ds.Tables[0]);
+
+                return view;
             }
         }
 
@@ -90,7 +95,10 @@ namespace Order
         {
             if (requiredQuantity.IsValid && rangeQuantity.IsValid && requiredTopping.IsValid)
             {
-                sCoffeeType = coffeeType.SelectedItem.Text;
+                // Giải pháp tạm thời: sử dụng js để lưu giá trị index
+                index = Convert.ToInt32(hf_ddl.Value);
+                sCoffeeType = coffeeType.Items[index].Text;
+
                 sQuantity = quantity.Text != null ? quantity.Text : "";
                 sTopping = topping.SelectedItem != null ? topping.SelectedItem.Text : "";
                 sAddOns = "";
@@ -136,7 +144,7 @@ namespace Order
                 Session["Topping"] = sTopping;
                 Session["AddOns"] = sAddOns;
                 Session["TotalPrice"] = totalPrice.ToString();
-                Response.Redirect("OrderConfirm.aspx");
+                Server.Transfer("OrderConfirm.aspx");
             }
         }
     }

@@ -106,9 +106,15 @@ function LoadMenu(id) {
     $('#menuContent').html(output);
 }
 
+
 /* HTML document is loaded. DOM is ready.
 -----------------------------------------*/
 $(document).ready(function () {
+
+    $("#ContentPlaceHolder1_coffeeType").change(function () {
+        $("#ContentPlaceHolder1_hf_ddl").val(this.selectedIndex);
+    });
+
 
     // Mobile menu
     $('.mobile-menu-icon').click(function () {

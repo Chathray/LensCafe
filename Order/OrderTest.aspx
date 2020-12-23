@@ -7,8 +7,8 @@
         <h1 class="tm-handwriting-font SetToCenter">Tạo Đơn Hàng</h1>
         <br>
         <asp:Label ID="lblCoffee" runat="server" Text="Loại Coffee:" CssClass="OrderLabels"></asp:Label>
-        <asp:DropDownList ID="coffeeType" runat="server" CssClass="inputs">
-        </asp:DropDownList>
+        <asp:DropDownList ID="coffeeType" CssClass="inputs" runat="server" />
+        <asp:HiddenField ID="hf_ddl" runat="server" />
         <br>
         <br>
         <asp:Label ID="lblQuantity" runat="server" Text="Số lượng:" CssClass="OrderLabels"></asp:Label>
