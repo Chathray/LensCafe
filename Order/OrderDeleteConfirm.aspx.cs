@@ -36,22 +36,22 @@ namespace Order
                 //check if record was successfully inserted
                 if (delete > 0)
                 {
-                    outputDelete.InnerHtml = "<label>This order has been deleted.</label> <br />";
+                    outputDelete.InnerHtml = "<label>Đơn hàng này đã bị xóa.</label> <br />";
                     string peertype = Request.QueryString["peertype"];
 
                     if (peertype == "00" || peertype == "10")
-                        outputDelete.InnerHtml += "<a href='UserOrderRepeater.aspx'>Back to Customer's Orders</a>";
-                    else if(peertype == "11")
-                        outputDelete.InnerHtml += "<a href='AdminUserOrder.aspx'>Back to Customer's Orders</a>";
+                        outputDelete.InnerHtml += "<a href='UserOrderRepeater.aspx'>Quay lại Đơn hàng của tôi</a>";
+                    else if (peertype == "11")
+                        outputDelete.InnerHtml += "<a href='AdminUserOrder.aspx'>Quay lại Đơn khách hàng</a>";
                 }
                 else
                 {
-                    deleteErrorMsg.Text = "Order delete unsuccessful, please try again later.";
+                    deleteErrorMsg.Text = "Xóa đơn hàng không thành công, vui lòng thử lại sau.";
                 }
             }
             catch (Exception err)
             {
-                deleteErrorMsg.Text = "Delete Error <br /> " + err.Message;
+                deleteErrorMsg.Text = "Lỗi khi xóa <br /> " + err.Message;
             }
             finally
             {

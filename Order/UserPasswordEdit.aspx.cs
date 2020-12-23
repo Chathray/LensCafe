@@ -5,7 +5,7 @@ using System.Web.UI;
 
 namespace Order
 {
-    public partial class UserPasswordEdit : System.Web.UI.Page
+    public partial class UserPasswordEdit : Page
     {
         private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
         SqlConnection con = new SqlConnection(connectionString);

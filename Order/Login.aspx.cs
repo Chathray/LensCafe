@@ -65,18 +65,18 @@ namespace Order
                             }
                             else
                             {
-                                loginErrorMsg.Text = "Incorrect Password";
+                                loginErrorMsg.Text = "Mật khẩu không đúng";
                             }
                         }
                         else
                         {
-                            loginErrorMsg.Text = "Database error";
+                            loginErrorMsg.Text = "Lỗi cơ sở dữ liệu";
                         }
                     }
                 }
                 else
                 {
-                    loginErrorMsg.Text = "User does not exists.";
+                    loginErrorMsg.Text = "Người dùng không tồn tại";
                 }
             }
         }

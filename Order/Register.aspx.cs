@@ -84,12 +84,12 @@ namespace Order
                         }
                         else
                         {
-                            regErrorMsg.Text = "Registration unsuccessful, please try again later.";
+                            regErrorMsg.Text = "Đăng ký không thành công, vui lòng thử lại sau.";
                         }
                     }
                     catch (Exception err)
                     {
-                        regErrorMsg.Text = "Registration Error <br /> " + err.Message;
+                        regErrorMsg.Text = "Lỗi đăng ký <br /> " + err.Message;
                     }
                     finally
                     {
@@ -102,7 +102,7 @@ namespace Order
                     {
                         case 1:
                             {
-                                regErrorEmail.Text = "This email was used by someone else.";
+                                regErrorEmail.Text = "Email này đã được người khác sử dụng.";
                                 break;
                             }
                         default:
@@ -115,7 +115,7 @@ namespace Order
                     {
                         case 1:
                             {
-                                regErrorUsername.Text = "This username was used by someone else.";
+                                regErrorUsername.Text = "Tên người dùng này đã được người khác sử dụng.";
                                 break;
                             }
                         default:

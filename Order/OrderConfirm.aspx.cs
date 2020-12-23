@@ -7,7 +7,6 @@ namespace Order
     public partial class OrderConfirm : System.Web.UI.Page
     {
         string sCoffeeType, sQuantity, sTopping, sAddOns;
-        int BrownSugar, WhiteSugar, Salt, Creamer, Stirrer;
         double totalPrice;
         private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
 
@@ -22,11 +21,6 @@ namespace Order
             sQuantity = Session["Quantity"].ToString();
             sTopping = Session["Topping"].ToString();
             sAddOns = Session["AddOns"].ToString();
-            BrownSugar = Convert.ToInt32(Session["BrownSugar"].ToString());
-            WhiteSugar = Convert.ToInt32(Session["WhiteSugar"].ToString());
-            Salt = Convert.ToInt32(Session["Salt"].ToString());
-            Creamer = Convert.ToInt32(Session["Creamer"].ToString());
-            Stirrer = Convert.ToInt32(Session["Stirrer"].ToString());
             totalPrice = Convert.ToDouble(Session["TotalPrice"].ToString());
 
             //coffee types
@@ -63,19 +57,15 @@ namespace Order
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
 
-            string insertData = "INSERT INTO Orders (MemberId, Flavor, Quantity, Topping, BrownSugar, WhiteSugar, Salt, Creamer, Stirrer, TotalPrice, Status)";
+            string insertData = "INSERT INTO Orders (MemberId, Flavor, Quantity, Topping, AddOns, TotalPrice, Status)";
             insertData += "VALUES ('";
-            insertData += Session["MemberId"].ToString() + "', '";
+            insertData += Session["MemberId"].ToString() + "', N'";
             insertData += sCoffeeType + "', '";
-            insertData += Convert.ToInt32(sQuantity) + "', '";
-            insertData += sTopping + "', '";
-            insertData += BrownSugar + "', '";
-            insertData += WhiteSugar + "', '";
-            insertData += Salt + "', '";
-            insertData += Creamer + "', '";
-            insertData += Stirrer + "', '";
+            insertData += Convert.ToInt32(sQuantity) + "', N'";
+            insertData += sTopping + "', N'";
+            insertData += sAddOns + "', '";
             insertData += totalPrice + "', ";
-            insertData += "'Pending')";
+            insertData += "N'Đang xử lý')";
 
             SqlCommand cmdInsertData = new SqlCommand(insertData, con);
             int added = 0;
@@ -88,21 +78,21 @@ namespace Order
                 if (added > 0)
                 {
                     output.InnerHtml = "<div class='SetToCenter'>";
-                    output.InnerHtml += "<label id='orderSucess'>Your order has been placed, thank you.</label>";
+                    output.InnerHtml += "<label id='orderSucess'>Đơn hàng của bạn đã được đặt, cảm ơn bạn.</label>";
                     output.InnerHtml += "<br />";
-                    output.InnerHtml += "<a href='Home.aspx'>Back to Home</a>";
+                    output.InnerHtml += "<a href='Home.aspx'>Trang chủ</a>";
                     output.InnerHtml += "&nbsp;&nbsp;&nbsp;&nbsp;";
-                    output.InnerHtml += "<a href='UserOrderRepeater.aspx'>Go to My Orders</a>";
+                    output.InnerHtml += "<a href='UserOrderRepeater.aspx'>Đi tới Đơn hàng của tôi</a>";
                     output.InnerHtml += "</div>";
                 }
                 else
                 {
-                    orderErrorMsg.Text = "Unsuccessful order, please try again later.";
+                    orderErrorMsg.Text = "Đặt hàng không thành công, vui lòng thử lại sau.";
                 }
             }
             catch (Exception err)
             {
-                orderErrorMsg.Text = "Order Error <br /> " + err.Message;
+                orderErrorMsg.Text = "Lỗi đơn hàng <br /> " + err.Message;
             }
             finally
             {
@@ -115,7 +105,7 @@ namespace Order
             outputCoffee.Text = sCoffeeType;
             outputQuantity.Text = sQuantity;
             outputTopping.Text = sTopping;
-            outputAddOns.Text = sAddOns != "" ? sAddOns : "None";
+            outputAddOns.Text = sAddOns != "" ? sAddOns : "Không";
             outputTotal.Text = "RM " + string.Format("{0:0.00}", totalPrice);
         }
     }

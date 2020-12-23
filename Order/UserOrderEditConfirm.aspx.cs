@@ -9,7 +9,7 @@ namespace Order
         private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
 
         string editFlavor, editTopping, editAddOns, editStatus;
-        int num, orderId, editBrownSugar, editWhiteSugar, editSalt, editCreamer, editStirrer, editQuantity;
+        int num, orderId, editQuantity;
         double totalPrice = 0.0;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,11 +28,6 @@ namespace Order
             editQuantity = Convert.ToInt32(Session["editQuantity"].ToString());
             editTopping = Session["editTopping"].ToString();
             editAddOns = Session["editAddOns"].ToString();
-            editBrownSugar = Convert.ToInt32(Session["editBrownSugar"].ToString());
-            editWhiteSugar = Convert.ToInt32(Session["editWhiteSugar"].ToString());
-            editSalt = Convert.ToInt32(Session["editSalt"].ToString());
-            editCreamer = Convert.ToInt32(Session["editCreamer"].ToString());
-            editStirrer = Convert.ToInt32(Session["editStirrer"].ToString());
             totalPrice = Convert.ToDouble(Session["editTotalPrice"].ToString());
 
             //coffee types
@@ -73,16 +68,12 @@ namespace Order
             con.Open();
 
             string updateQuery = "UPDATE Orders SET Quantity=" + editQuantity + ", ";
-            updateQuery += "Topping='" + editTopping + "', ";
-            updateQuery += "BrownSugar=" + editBrownSugar + ", ";
-            updateQuery += "WhiteSugar=" + editWhiteSugar + ", ";
-            updateQuery += "Salt=" + editSalt + ", ";
-            updateQuery += "Creamer=" + editCreamer + ", ";
-            updateQuery += "Stirrer=" + editStirrer + ", ";
+            updateQuery += "Topping=N'" + editTopping + "', ";
+            updateQuery += "AddOns=N'" + editAddOns + "', ";
 
             if (Session["MemberRole"].ToString() == "admin")
             {
-                updateQuery += "Status='" + editStatus + "', ";
+                updateQuery += "Status=N'" + editStatus + "', ";
             }
 
             updateQuery += "TotalPrice=" + totalPrice + " ";
@@ -97,21 +88,21 @@ namespace Order
                 if (added > 0)
                 {
                     output.InnerHtml = "<div class='SetToCenter'>";
-                    output.InnerHtml += "<label id='orderEditSucess'>Order has been updated.</label>";
+                    output.InnerHtml += "<label id='orderEditSucess'>Đơn hàng đã được cập nhật.</label>";
                     output.InnerHtml += "<br />";
-                    output.InnerHtml += "<a href='UserOrderRepeater.aspx'>Go to My Orders</a>";
+                    output.InnerHtml += "<a href='UserOrderRepeater.aspx'>Đi tới Đơn hàng của tôi</a>";
                     output.InnerHtml += "&nbsp;&nbsp;&nbsp;&nbsp;";
-                    output.InnerHtml += "<a href='Home.aspx'>Back to Home</a>";
+                    output.InnerHtml += "<a href='Home.aspx'>Trang chủ</a>";
                     output.InnerHtml += "</div>";
                 }
                 else
                 {
-                    orderUpdateErrorMsg.Text = "Order update failed, please try again later.";
+                    orderUpdateErrorMsg.Text = "Cập nhật đơn đặt hàng không thành công, vui lòng thử lại sau.";
                 }
             }
             catch (Exception err)
             {
-                orderUpdateErrorMsg.Text = "Order Update Error <br /> " + err.Message;
+                orderUpdateErrorMsg.Text = "Lỗi cập nhật đơn hàng <br /> " + err.Message;
             }
             finally
             {
@@ -135,7 +126,7 @@ namespace Order
             outputCoffee.Text = editFlavor;
             outputQuantity.Text = editQuantity.ToString();
             outputTopping.Text = editTopping;
-            outputAddOns.Text = editAddOns != "" ? editAddOns : "None";
+            outputAddOns.Text = editAddOns != "" ? editAddOns : "Không";
             outputTotal.Text = "RM " + string.Format("{0:0.00}", totalPrice);
         }
     }

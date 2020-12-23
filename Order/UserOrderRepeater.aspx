@@ -16,11 +16,11 @@
                             <asp:LinkButton ID="orderLinkButton" runat="server" CommandArgument='<%# Eval("OrderId").ToString() %>' OnClick="sendOrderID">
                                 <h3 class="tm-product-title"><%# Eval("Flavor") %></h3>
                             </asp:LinkButton>
-                            <p class='tm-product-description'>Order ID: <%# Eval("OrderId") %></p>
-                            <p class='tm-product-description'>Status: <%# Eval("Status") %></p>
-                            <p class='tm-product-description'>Quantity: <%# Eval("Quantity") %></p>
-                            <p class='tm-product-description'>Toppings: <%# Eval("Topping") %></p>
-                            <p id="pAddOns" class='tm-product-description'>Add Ons: <%# AddOns(Eval("BrownSugar").ToString(), Eval("WhiteSugar").ToString(), Eval("Salt").ToString(), Eval("Creamer").ToString(), Eval("Stirrer").ToString()) %></p>
+                            <p class='tm-product-description'>Mã đơn hàng: <%# Eval("OrderId") %></p>
+                            <p class='tm-product-description'>Trạng thái: <%# Eval("Status") %></p>
+                            <p class='tm-product-description'>Số lượng: <%# Eval("Quantity") %></p>
+                            <p class='tm-product-description'>Lớp phủ: <%# Eval("Topping") %></p>
+                            <p id="pAddOns" class='tm-product-description'>Bổ sung: <%# Eval("AddOns") %></p>
                         </div>
                         <div class='tm-product-price'>
                             <h4 class='tm-product-price-link tm-handwriting-font text-center'>$<%# Eval("TotalPrice") %></h4>

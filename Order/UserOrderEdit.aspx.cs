@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 using System.Web.UI;
@@ -6,10 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace Order
 {
-    public partial class UserOrderEdit : System.Web.UI.Page
+    public partial class UserOrderEdit : Page
     {
         private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-        string BrownSugar, WhiteSugar, Salt, Creamer, Stirrer, sTopping, sFlavor = "", status;
+        string sAddOns, sTopping, sFlavor = "", status;
 
         int num, orderId, intQuantity;
         SqlConnection con = new SqlConnection(connectionString);
@@ -63,11 +64,11 @@ namespace Order
                     statusDropDown.Items.FindByText(dbStatus).Selected = true;
                     switch (dbStatus)
                     {
-                        case "Pending":
-                            statusDropDown.Items.Add(new ListItem("Confirmed", "Confirmed"));
+                        case "Đang xử lý":
+                            statusDropDown.Items.Add(new ListItem("Đã xác nhận", "Đã xác nhận"));
                             break;
-                        case "Confirmed":
-                            statusDropDown.Items.Add(new ListItem("Pending", "Pending"));
+                        case "Đã xác nhận":
+                            statusDropDown.Items.Add(new ListItem("Đang xử lý", "Đang xử lý"));
                             break;
                     }
 
@@ -81,6 +82,13 @@ namespace Order
                     submitDelete.Visible = true;
                     lblStatus.Visible = false;
                 }
+
+                topping.DataTextField = addOns.DataTextField = "Name";
+                topping.DataValueField = addOns.DataValueField = "Prize";
+                topping.DataSource = GetTopping();
+                addOns.DataSource = GetAddOns();
+                topping.DataBind();
+                addOns.DataBind();
 
                 con.Open();
 
@@ -99,27 +107,21 @@ namespace Order
                     intQuantity = Convert.ToInt32(reader["Quantity"].ToString());
 
                     sTopping = reader["Topping"].ToString();
-                    switch (sTopping)
-                    {
-                        case "Cinnamon":
-                            topping.SelectedIndex = 0;
-                            break;
-                        case "Whipped Cream":
-                            topping.SelectedIndex = 1;
-                            break;
-                        case "Nutmeg":
-                            topping.SelectedIndex = 2;
-                            break;
-                        case "None":
-                            topping.SelectedIndex = 3;
-                            break;
-                    }
+                    topping.Items.FindByText(sTopping).Selected = true;
 
-                    BrownSugar = reader["BrownSugar"].ToString();
-                    WhiteSugar = reader["WhiteSugar"].ToString();
-                    Salt = reader["Salt"].ToString();
-                    Creamer = reader["Creamer"].ToString();
-                    Stirrer = reader["Stirrer"].ToString();
+                    sAddOns = reader["AddOns"].ToString();
+                    var reLst = sAddOns.Split(',');
+                    foreach (ListItem listDeco in addOns.Items)
+                    {
+                        foreach (string s in reLst)
+                        {
+                            if (listDeco.Text == s.Trim())
+                            {
+                                listDeco.Selected = true;
+                                break;
+                            }
+                        }
+                    }
                 }
 
                 con.Close();
@@ -154,23 +156,15 @@ namespace Order
                 lblCoffeeType.Text += sFlavor;
                 quantity.Text = intQuantity.ToString();
 
-                string[] arrayAddOns = { BrownSugar, WhiteSugar, Salt, Creamer, Stirrer };
-                for (int i = 0; i < arrayAddOns.Length; i++)
-                {
-                    if (arrayAddOns[i] == "1")
-                    {
-                        addOns.Items[i].Selected = true;
-                    }
-                }
 
-                if (status == "Confirmed" && Session["MemberRole"].ToString() == "user")
+                if (status == "Đã xác nhận" && Session["MemberRole"].ToString() == "user")
                 {
                     quantity.ReadOnly = true;
                     topping.Enabled = false;
                     addOns.Enabled = false;
                     submit.Enabled = false;
                     submit.Visible = false;
-                    lblMsg.Text = "Your order cannot be edited as it has already been confirmed.";
+                    lblMsg.Text = "Không thể chỉnh sửa đơn đặt hàng của bạn vì nó đã được xác nhận.";
                     lblMsg.Visible = true;
                 }
             }
@@ -191,7 +185,6 @@ namespace Order
                 string editQuantity = quantity.Text != null ? quantity.Text : "";
                 string editTopping = topping.SelectedItem != null ? topping.SelectedItem.Text : "";
                 string editAddOns = "";
-                int editBrownSugar = 0, editWhiteSugar = 0, editSalt = 0, editCreamer = 0, editStirrer = 0;
 
                 con.Close();
 
@@ -205,25 +198,6 @@ namespace Order
                     {
                         priceAddOns += Convert.ToDouble(addOns.Items[i].Value);
                         count++;
-
-                        switch (i)
-                        {
-                            case 0:
-                                editBrownSugar = 1;
-                                break;
-                            case 1:
-                                editWhiteSugar = 1;
-                                break;
-                            case 2:
-                                editSalt = 1;
-                                break;
-                            case 3:
-                                editCreamer = 1;
-                                break;
-                            case 4:
-                                editStirrer = 1;
-                                break;
-                        }
                     }
                 }
 
@@ -239,39 +213,13 @@ namespace Order
                         {
                             editAddOns += ", ";
                         }
-
                         index++;
                     }
                 }
 
                 //calculate total price
-                double priceCoffeeType = 0.00, priceTopping, priceQuantity, totalPrice;
-
-                switch (editFlavor)
-                {
-                    case "Classic Americano":
-                        priceCoffeeType = 5.00;
-                        break;
-                    case "Classic Cappuccino":
-                        priceCoffeeType = 4.50;
-                        break;
-                    case "Iced Cappuccino":
-                        priceCoffeeType = 4.90;
-                        break;
-                    case "Classic Latte":
-                        priceCoffeeType = 4.20;
-                        break;
-                    case "Vanilla Latte":
-                        priceCoffeeType = 4.30;
-                        break;
-                    case "Caramel Latte":
-                        priceCoffeeType = 4.40;
-                        break;
-                    case "Mocha Latte":
-                        priceCoffeeType = 4.80;
-                        break;
-                }
-
+                double priceCoffeeType, priceTopping, priceQuantity, totalPrice;
+                priceCoffeeType = Convert.ToDouble(Session["priceCoffeeType"]);
                 priceTopping = editTopping != "" ? Convert.ToDouble(topping.SelectedValue) : 0.0;
                 priceQuantity = editQuantity != "" ? Convert.ToDouble(editQuantity) : 0.0;
 
@@ -282,11 +230,6 @@ namespace Order
                 Session["editQuantity"] = editQuantity;
                 Session["editTopping"] = editTopping;
                 Session["editAddOns"] = editAddOns;
-                Session["editBrownSugar"] = editBrownSugar;
-                Session["editWhiteSugar"] = editWhiteSugar;
-                Session["editSalt"] = editSalt;
-                Session["editCreamer"] = editCreamer;
-                Session["editStirrer"] = editStirrer;
                 Session["editTotalPrice"] = totalPrice.ToString();
 
                 if (Session["MemberRole"].ToString() == "admin")
@@ -309,6 +252,32 @@ namespace Order
         {
             string orderId = Global.OrderId;
             num = short.Parse(orderId);
+        }
+
+        private DataSet GetTopping()
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            string q = "select * from Items where Type='TO'";
+            using (con)
+            {
+                SqlDataAdapter da = new SqlDataAdapter(q, con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+        }
+
+        private DataSet GetAddOns()
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            string q = "select * from Items where Type='AO'";
+            using (con)
+            {
+                SqlDataAdapter da = new SqlDataAdapter(q, con);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
         }
     }
 }

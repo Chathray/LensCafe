@@ -14,22 +14,22 @@
             <div id="menuContent" runat="server" class="tm-menu-product-content col-lg-9 col-md-9 form-bg-color ToRightSide"> <!-- menu content -->
                 <asp:Label ID="lblCurrentPassword" runat="server" Text="Mật khẩu hiện tại:" CssClass="OrderLabels"></asp:Label>
                 <asp:TextBox ID="txtboxCurrentPassword" runat="server" TextMode="Password" CssClass="inputs"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqCurrentPassword" runat="server" ErrorMessage="Current Password is required" ControlToValidate="txtboxCurrentPassword" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="regExpCurrentPassword" runat="server" ControlToValidate="txtboxCurrentPassword" ErrorMessage="Minimum password length is 8" ValidationExpression=".{8}.*" EnableClientScript="False" ForeColor="Red" />
+                <asp:RequiredFieldValidator ID="reqCurrentPassword" runat="server" ErrorMessage="Bạn phải nhập mật khẩu" ControlToValidate="txtboxCurrentPassword" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="regExpCurrentPassword" runat="server" ControlToValidate="txtboxCurrentPassword" ErrorMessage="Độ dài mật khẩu tối thiểu là 8" ValidationExpression=".{8}.*" EnableClientScript="False" ForeColor="Red" />
 
                 <br />
 
                 <asp:Label ID="lblNewPassword" runat="server" Text="Mật khẩu mới:" CssClass="OrderLabels"></asp:Label>
                 <asp:TextBox ID="txtboxNewPassword" runat="server" TextMode="Password" CssClass="inputs"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqNewPassword" runat="server" ErrorMessage="New Password is required" ControlToValidate="txtboxNewPassword" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="regExpNewPassword" runat="server" ControlToValidate="txtboxNewPassword" ErrorMessage="Minimum password length is 8" ValidationExpression=".{8}.*" EnableClientScript="False" ForeColor="Red" />
+                <asp:RequiredFieldValidator ID="reqNewPassword" runat="server" ErrorMessage="Mật khẩu mới là bắt buộc" ControlToValidate="txtboxNewPassword" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="regExpNewPassword" runat="server" ControlToValidate="txtboxNewPassword" ErrorMessage="Độ dài mật khẩu tối thiểu là 8" ValidationExpression=".{8}.*" EnableClientScript="False" ForeColor="Red" />
 
                 <br />
 
                 <asp:Label ID="lblConfirmPassword" runat="server" Text="Xác nhận lại:" CssClass="OrderLabels"></asp:Label>
                 <asp:TextBox ID="txtboxConfirmPassword" runat="server" TextMode="Password" CssClass="inputs"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqConfirmPassword" runat="server" ErrorMessage="Confirm New Password is required" ControlToValidate="txtboxConfirmPassword" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:CompareValidator ID="compareConfirmPassword" runat="server" ErrorMessage="Confirm New Password must be the same as New Password" ControlToValidate="txtboxConfirmPassword" EnableClientScript="False" ForeColor="Red" ControlToCompare="txtboxNewPassword"></asp:CompareValidator>
+                <asp:RequiredFieldValidator ID="reqConfirmPassword" runat="server" ErrorMessage="Xác nhận mật khẩu mới là bắt buộc" ControlToValidate="txtboxConfirmPassword" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="compareConfirmPassword" runat="server" ErrorMessage="Xác nhận mật khẩu mới phải giống với mật khẩu mới" ControlToValidate="txtboxConfirmPassword" EnableClientScript="False" ForeColor="Red" ControlToCompare="txtboxNewPassword"></asp:CompareValidator>
 
                 <br />
 

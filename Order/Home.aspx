@@ -16,7 +16,7 @@
                     <img src="img/header-line.png" alt="Line" class="tm-header-line">&nbsp;Welcome To&nbsp;&nbsp;<img src="img/header-line.png" alt="Line" class="tm-header-line"></h2>
                 <h2 class="gold-text tm-welcome-header-2">Lens Coffee</h2>
                 <p class="gray-text tm-welcome-description">Chúng tôi mong muốn mang đến cho bạn những trải nghiệm đáng nhớ mỗi lần đến Lens Coffee®. Hãy chia sẻ với chúng tôi để chúng tôi có thể mang đến cho bạn những trải nghiệm tuyệt vời hơn thế.</p>
-                <a id="btnDetails" runat="server" href="#main" class="tm-more-button tm-more-button-welcome"><i class="fa fa-angle-double-down"></i></a>
+                <a id="btnDetails" runat="server" href="#main" class="tm-more-button tm-more-button-welcome"><i class="fa fa-angle-down"></i></a>
             </div>
             <img src="img/table-set.png" alt="Table Set" class="tm-table-set img-responsive">
         </div>

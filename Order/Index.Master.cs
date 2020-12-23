@@ -3,7 +3,7 @@ using System.Web.UI;
 
 namespace Order
 {
-    public partial class Index : System.Web.UI.MasterPage
+    public partial class Index : MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,11 +31,11 @@ namespace Order
                 btnLoginSwitch.InnerHtml += "<a runat='server' class='dropdown' id='displayName'>" + Session["MemberUsername"].ToString() + "</a>";
                 btnLoginSwitch.InnerHtml += "<div class='dropdown-content'>";
                 btnLoginSwitch.InnerHtml += "<a runat='server' href='UserProfileEdit.aspx'>Hồ Sơ</a>";
-                btnLoginSwitch.InnerHtml += "<a runat='server' href='UserOrderRepeater.aspx'>Đơn hàng</a>";
+                btnLoginSwitch.InnerHtml += "<a runat='server' href='UserOrderRepeater.aspx'>Đơn hàng của tôi</a>";
 
                 if (Session["MemberRole"].ToString() == "admin")
                 {
-                    btnLoginSwitch.InnerHtml += "<a runat='server' href='AdminUserOrder.aspx'>Khách Hàng</a>";
+                    btnLoginSwitch.InnerHtml += "<a runat='server' href='AdminUserOrder.aspx'>Đơn Khách Hàng</a>";
                     btnLoginSwitch.InnerHtml += "<a runat='server' href='AdminUserTable.aspx'>Thành Viên</a>";
                 }
 

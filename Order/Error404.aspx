@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="error404" runat="server" Text="Error 404"></asp:Label>
+    <asp:Label ID="error404" runat="server" Text="Lỗi 404"></asp:Label>
 
     <br />
 
-    Page not found!
+    Không tìm thấy trang!
 </asp:Content>

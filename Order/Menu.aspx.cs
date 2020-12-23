@@ -3,7 +3,7 @@ using System.Web.UI;
 
 namespace Order
 {
-    public partial class Menu : System.Web.UI.Page
+    public partial class Menu : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

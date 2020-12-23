@@ -53,63 +53,6 @@ namespace Order
             }
         }
 
-        public string AddOns(string BrownSugar, string WhiteSugar, string Salt, string Creamer, string Stirrer)
-        {
-            string addOns = "";
-            string[] addOnsArray = { BrownSugar, WhiteSugar, Salt, Creamer, Stirrer };
-
-            //loop for Add-Ons
-            int index = 1;
-            int count = 0;
-
-            for (int i = 0; i < addOnsArray.Length; i++)
-            {
-                if (addOnsArray[i] == "1")
-                {
-                    count++;
-                }
-            }
-
-            for (int i = 0; i < addOnsArray.Length; i++)
-            {
-                if (addOnsArray[i] == "1")
-                {
-                    switch (i)
-                    {
-                        case 0:
-                            addOns += "Brown Sugar";
-                            break;
-                        case 1:
-                            addOns += "White Sugar";
-                            break;
-                        case 2:
-                            addOns += "Salt";
-                            break;
-                        case 3:
-                            addOns += "Creamer";
-                            break;
-                        case 4:
-                            addOns += "Stirrer";
-                            break;
-                    }
-
-                    if (index >= 1 && index != count)
-                    {
-                        addOns += ", ";
-                    }
-
-                    index++;
-                }
-            }
-
-            if (addOns == "")
-            {
-                addOns = "None";
-            }
-
-            return addOns;
-        }
-
         public string GetImage(string coffee)
         {
             string path = "";

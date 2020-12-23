@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 
 namespace Order
 {
-    public partial class AdminUserEdit : System.Web.UI.Page
+    public partial class AdminUserEdit : Page
     {
         private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
         SqlConnection con = new SqlConnection(connectionString);

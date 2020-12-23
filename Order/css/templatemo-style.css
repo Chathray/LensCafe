@@ -204,7 +204,7 @@ ul {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -292,7 +292,7 @@ ul {
 
 .tm-welcome-header-2 {
     font-family: 'Dancing Script', sans-serif;
-    font-size: 54px;
+    font-size: 72px;
 }
 
 .tm-welcome-content {
@@ -418,11 +418,11 @@ ul {
 .tm-footer-div-title {
     color: white;
     font-size: 21px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .tm-footer-nav {
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
@@ -689,7 +689,7 @@ ol {
             content: counter(item) ". ";
             counter-increment: item;
             color: #c79c60;
-            font-weight: 700;
+            font-weight: 600;
         }
 
 .tm-section-header-container {
@@ -1023,7 +1023,12 @@ button.tm-more-button {
 }
 
 .profileActive {
-    color: #3498db;
+    background-color: #fafafa;
+    border-left: 2px solid #505050;
+    border-radius: 6px;
+    display: inline-block;
+    margin-right: 6px;
+    padding: 6px;
 }
 
 .TableCss {
@@ -1084,7 +1089,7 @@ button.tm-more-button {
     background-color: #252828;
     display: none;
     position: absolute;
-    min-width: 160px;
+    min-width: 190px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -1190,7 +1195,6 @@ button.tm-more-button {
         .tm-nav li {
             float: none;
         }
-
             .tm-nav li a {
                 display: block;
                 padding-bottom: 15px;

@@ -3,11 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="outputAdminUserDelete" class="form-bg-color SetToCenter" runat="server">
-        <asp:Label ID="lblUserDeleteMsg" runat="server" Text="Are you sure you want to delete this user from your Member List?" CssClass="OrderLabels"></asp:Label>
+        <asp:Label ID="lblUserDeleteMsg" runat="server" Text="Bạn có chắc chắn muốn xóa người dùng này khỏi Danh sách thành viên của mình không?" CssClass="OrderLabels"></asp:Label>
         <br />
-        <asp:Button ID="submitUserDelete" runat="server" Text="Yes" OnClick="submitUserDelete_Click" CssClass="btnShort"/>
+        <asp:Button ID="submitUserDelete" runat="server" Text="Phải" OnClick="submitUserDelete_Click" CssClass="btnShort"/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" value="Back" onclick="history.go(-1);return false;" class="btnShort">
+        <input type="button" value="Trở về" onclick="history.go(-1);return false;" class="btnShort">
         <asp:Label ID="userDeleteErrorMsg" runat="server" Text=""></asp:Label>
     </div>
 </asp:Content>

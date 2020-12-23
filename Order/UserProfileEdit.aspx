@@ -22,21 +22,21 @@
 
                 <asp:Label ID="lblUsernameDisplay" runat="server" Text="Tên tài khoản:" CssClass="OrderLabels"></asp:Label>
                 <asp:TextBox ID="txtboxUsername" runat="server" CssClass="inputs"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqUsername" runat="server" ErrorMessage="Please fill in a username." ControlToValidate="txtboxUsername" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="regExpUsername" runat="server" ControlToValidate="txtboxUsername" ErrorMessage="Username character must be more than 2" ValidationExpression=".{3}.*" EnableClientScript="False" ForeColor="Red" />
-                <asp:CustomValidator ID="customUsername" runat="server" ErrorMessage="This username has been taken" ForeColor="Red" EnableClientScript="false" ControlToValidate="txtboxUsername" OnServerValidate="customUsername_ServerValidate"></asp:CustomValidator>
+                <asp:RequiredFieldValidator ID="reqUsername" runat="server" ErrorMessage="Vui lòng điền tên người dùng" ControlToValidate="txtboxUsername" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="regExpUsername" runat="server" ControlToValidate="txtboxUsername" ErrorMessage="Ký tự tên người dùng phải nhiều hơn 2" ValidationExpression=".{3}.*" EnableClientScript="False" ForeColor="Red" />
+                <asp:CustomValidator ID="customUsername" runat="server" ErrorMessage="Tên người dùng này đã được sử dụng" ForeColor="Red" EnableClientScript="false" ControlToValidate="txtboxUsername" OnServerValidate="customUsername_ServerValidate"></asp:CustomValidator>
 
                 <br />
 
-                <asp:Label ID="lblName" runat="server" Text="Tên đầy đủ:" CssClass="OrderLabels"></asp:Label>
+                <asp:Label ID="lblName" runat="server" Text="Họ và tên:" CssClass="OrderLabels"></asp:Label>
                 <asp:TextBox ID="txtboxName" runat="server" CssClass="inputs"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqName" runat="server" ErrorMessage="Please fill in a name." ControlToValidate="txtboxName" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="reqName" runat="server" ErrorMessage="Vui lòng điền tên." ControlToValidate="txtboxName" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 <br />
 
                 <asp:Label ID="lblPhone" runat="server" Text="Di động:" CssClass="OrderLabels"></asp:Label>
                 <asp:TextBox ID="txtboxPhone" runat="server" TextMode="Phone" CssClass="inputs"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="reqPhone" runat="server" ErrorMessage="Please fill in a phone number." ControlToValidate="txtboxPhone" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="reqPhone" runat="server" ErrorMessage="Vui lòng điền số điện thoại." ControlToValidate="txtboxPhone" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 <br />
                 <br />
