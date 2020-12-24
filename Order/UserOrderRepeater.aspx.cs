@@ -10,7 +10,7 @@ namespace Order
     public partial class UserOrderRepeater : Page
     {
         private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-        SqlConnection con = new SqlConnection(connectionString);
+        SqlConnection con = new SqlConnection(Global.connectionString);
 
         protected void Page_Load(object sender, EventArgs e)
         {

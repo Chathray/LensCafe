@@ -6,7 +6,6 @@ namespace Order
 {
     public partial class AdminUserDelete : System.Web.UI.Page
     {
-        private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
         int id;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,7 +27,7 @@ namespace Order
         {
             setMemberId();
 
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             con.Open();
             string deleteUserQuery = "DELETE FROM Members WHERE MemberId='" + id + "'";
             SqlCommand cmdDeleteUser = new SqlCommand(deleteUserQuery, con);

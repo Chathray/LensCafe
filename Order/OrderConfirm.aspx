@@ -14,7 +14,7 @@
         <br />
         <br />
 
-        <asp:Label ID="lblCoffee" runat="server" Text="Loại Coffee:" CssClass="OrderLabels"></asp:Label>
+        <asp:Label ID="lblCoffee" runat="server" Text="Tên hàng:" CssClass="OrderLabels"></asp:Label>
         <asp:Label ID="outputCoffee" runat="server" CssClass="OrderDetails"></asp:Label>
         <br />
         <br />

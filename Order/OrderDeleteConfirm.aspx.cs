@@ -6,8 +6,6 @@ namespace Order
 {
     public partial class OrderDeleteConfirm : System.Web.UI.Page
     {
-        private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-
         int num;
         string orderId;
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +21,7 @@ namespace Order
             setCoffee();
             orderId = num.ToString();
 
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             con.Open();
             string deleteOrderQuery = "DELETE FROM Orders WHERE OrderId='" + orderId + "'";
             SqlCommand cmdDeleteOrder = new SqlCommand(deleteOrderQuery, con);

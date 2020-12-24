@@ -6,8 +6,6 @@ namespace Order
 {
     public partial class UserOrderEditConfirm : System.Web.UI.Page
     {
-        private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-
         string editFlavor, editTopping, editAddOns, editStatus;
         int num, orderId, editQuantity;
         double totalPrice = 0.0;
@@ -40,7 +38,7 @@ namespace Order
             setCoffee();
             orderId = num;
 
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             con.Open();
 
             string updateQuery = "UPDATE Orders SET Quantity=" + editQuantity + ", ";

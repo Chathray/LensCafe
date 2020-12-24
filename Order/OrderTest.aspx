@@ -6,7 +6,7 @@
     <div class="form-bg-color">
         <h1 class="tm-handwriting-font SetToCenter">Tạo Đơn Hàng</h1>
         <br>
-        <asp:Label ID="lblCoffee" runat="server" Text="Loại Coffee:" CssClass="OrderLabels"></asp:Label>
+        <asp:Label ID="lblCoffee" runat="server" Text="Tên hàng:" CssClass="OrderLabels"></asp:Label>
         <asp:DropDownList ID="coffeeType" CssClass="form-control" runat="server" />
         <asp:HiddenField ID="hf_ddl" runat="server" Value="0"/>
         <br>

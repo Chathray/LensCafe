@@ -808,11 +808,6 @@ ol {
     font-family: 'Open Sans', sans-serif;
 }
 
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
 .tm-product-title {
     font-size: 14pt;
@@ -861,6 +856,7 @@ ol {
 .form-control {
     border-color: rgb(135, 113, 67);
     margin-top: 8px;
+    box-sizing: border-box;
 }
 
     .form-control:focus {
@@ -949,6 +945,11 @@ button.tm-more-button {
 .OrderLabels {
     font-size: 11pt;
     font-weight: 400;
+    display: block;
+    max-width: 100%;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .OrderDetails {
@@ -1057,7 +1058,7 @@ button.tm-more-button {
 }
 
 .tableOrderDetails {
-    padding-left: 35px;
+    padding-left: 5px;
 }
 
 .tm-product-repeater {

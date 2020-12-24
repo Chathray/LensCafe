@@ -18,14 +18,13 @@
             <asp:Image ID="image" runat="server" CssClass="img-confirm" />
         </div>
 
-
-
+        <br />
         <asp:Label ID="outputStatus" runat="server" Text="Trạng thái: " Visible="false" CssClass="OrderLabels"></asp:Label>
 
         <br />
         <br />
 
-        <asp:Label ID="lblCoffee" runat="server" Text="Loại Coffee:" CssClass="OrderLabels"></asp:Label>
+        <asp:Label ID="lblCoffee" runat="server" Text="Tên hàng:" CssClass="OrderLabels"></asp:Label>
         <asp:Label ID="outputCoffee" runat="server" CssClass="OrderDetails"></asp:Label>
 
         <br />

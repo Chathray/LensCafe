@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="form-bg-color">
-        <asp:Label ID="lblRegUsername" runat="server" Text="Tên tài khoản:" CssClass="OrderLabels"></asp:Label>
+        <asp:Label ID="lblRegUsername" runat="server" Text="Tài khoản:" CssClass="OrderLabels"></asp:Label>
         <asp:TextBox ID="regUsername" runat="server" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqRegUsername" runat="server" ErrorMessage="Phải nhập tên tài khoản" ControlToValidate="regUsername" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="regRegUsername" runat="server" ControlToValidate="regUsername" ErrorMessage="Ký tự tên người dùng phải nhiều hơn 2" ValidationExpression=".{3}.*" EnableClientScript="False" ForeColor="Red" />
@@ -29,7 +29,7 @@
         <asp:TextBox ID="regName" runat="server" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqRegName" runat="server" ErrorMessage="Phải nhập địa chỉ" ControlToValidate="regName" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
         <br>
-        <asp:Label ID="lblRegPhone" runat="server" Text="Số điện thoại:" CssClass="OrderLabels"></asp:Label>
+        <asp:Label ID="lblRegPhone" runat="server" Text="SĐT:" CssClass="OrderLabels"></asp:Label>
         <asp:TextBox ID="regPhone" runat="server" TextMode="Phone" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqRegPhone" runat="server" ErrorMessage="Phải nhập số điện thoại" ControlToValidate="regPhone" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
         <br>

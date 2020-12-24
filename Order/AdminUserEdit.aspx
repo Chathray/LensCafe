@@ -45,7 +45,7 @@
 
         <br />
 
-        <asp:Label ID="lblMemberPhone" runat="server" Text="Số điện thoại:" CssClass="OrderLabels"></asp:Label>
+        <asp:Label ID="lblMemberPhone" runat="server" Text="SĐT:" CssClass="OrderLabels"></asp:Label>
         <asp:TextBox ID="txtboxPhone" runat="server" TextMode="Phone" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqPhone" runat="server" ErrorMessage="Vui lòng điền số điện thoại." ControlToValidate="txtboxPhone" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
 

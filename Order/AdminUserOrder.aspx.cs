@@ -8,8 +8,6 @@ namespace Order
 {
     public partial class AdminUserOrder : System.Web.UI.Page
     {
-        private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["MemberEmail"] == null)
@@ -42,7 +40,7 @@ namespace Order
 
         private DataSet GetData()
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             string userOrderQuery = "select * from Orders";
             using (con)
             {

@@ -20,7 +20,7 @@
                 <br />
                 <br />
 
-                <asp:Label ID="lblUsernameDisplay" runat="server" Text="Tên tài khoản:" CssClass="OrderLabels"></asp:Label>
+                <asp:Label ID="lblUsernameDisplay" runat="server" Text="Tài khoản:" CssClass="OrderLabels"></asp:Label>
                 <asp:TextBox ID="txtboxUsername" runat="server" CssClass="form-control"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="reqUsername" runat="server" ErrorMessage="Vui lòng điền tên người dùng" ControlToValidate="txtboxUsername" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="regExpUsername" runat="server" ControlToValidate="txtboxUsername" ErrorMessage="Ký tự tên người dùng phải nhiều hơn 2" ValidationExpression=".{3}.*" EnableClientScript="False" ForeColor="Red" />

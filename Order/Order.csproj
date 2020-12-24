@@ -74,7 +74,12 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\templatemo-style.css" />
     <Content Include="Error404.aspx" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <Content Include="img\1.jpg" />
     <Content Include="img\favicon.ico" />
     <Content Include="img\header-line.png" />
@@ -264,11 +269,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Index.Master" />
     <Content Include="Web.sitemap" />
     <None Include="Web.Debug.config">

@@ -8,7 +8,7 @@ namespace Order
     public partial class UserPasswordEdit : Page
     {
         private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-        SqlConnection con = new SqlConnection(connectionString);
+        SqlConnection con = new SqlConnection(Global.connectionString);
         Encryption en = new Encryption();
         protected void Page_Load(object sender, EventArgs e)
         {

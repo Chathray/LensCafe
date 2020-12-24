@@ -69,13 +69,13 @@ namespace Order
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAdminOutput;
 
         /// <summary>
-        /// lblUsernameDisplay control.
+        /// lblMemberId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsernameDisplay;
+        protected global::System.Web.UI.WebControls.Label lblMemberId;
 
         /// <summary>
         /// lblUsername control.
@@ -87,15 +87,6 @@ namespace Order
         protected global::System.Web.UI.WebControls.Label lblUsername;
 
         /// <summary>
-        /// lblEmailDisplay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmailDisplay;
-
-        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -105,31 +96,13 @@ namespace Order
         protected global::System.Web.UI.WebControls.Label lblEmail;
 
         /// <summary>
-        /// lblNameDisplay control.
+        /// lblAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNameDisplay;
-
-        /// <summary>
-        /// lblName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
-
-        /// <summary>
-        /// lblPhoneDisplay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhoneDisplay;
+        protected global::System.Web.UI.WebControls.Label lblAddress;
 
         /// <summary>
         /// lblPhone control.
@@ -139,24 +112,6 @@ namespace Order
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPhone;
-
-        /// <summary>
-        /// lblMemberIdDisplay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMemberIdDisplay;
-
-        /// <summary>
-        /// lblMemberId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMemberId;
 
         /// <summary>
         /// lblStatusAdmin control.

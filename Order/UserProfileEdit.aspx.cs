@@ -9,7 +9,7 @@ namespace Order
     public partial class UserProfileEdit : Page
     {
         private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-        SqlConnection con = new SqlConnection(connectionString);
+        SqlConnection con = new SqlConnection(Global.connectionString);
         string dbName, dbPhone, dbEmail, dbUsername;
 
         protected void Page_Load(object sender, EventArgs e)

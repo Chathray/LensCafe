@@ -6,8 +6,6 @@ namespace Order
 {
     public partial class Register : System.Web.UI.Page
     {
-        private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["MemberEmail"] != null)
@@ -37,7 +35,7 @@ namespace Order
                 reqRegName.IsValid &&
                 reqRegPhone.IsValid)
             {
-                SqlConnection con = new SqlConnection(connectionString);
+                SqlConnection con = new SqlConnection(Global.connectionString);
                 con.Open();
 
                 string checkEmailExist = "select count(*) from Members where MemberEmail='" + email + "'";

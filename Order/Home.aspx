@@ -120,6 +120,21 @@
                     </div>
                 </div>
             </div>
+            <div class="tm-popular-item">
+                <img src="images/Espresso.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
+                <div class="tm-popular-item-description">
+                    <h3 class="tm-handwriting-font2 tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">E</span>spresso</h3>
+                    <hr class="tm-popular-item-hr">
+                    <p class="text-limit">
+                        Được chiết xuất một cách hoàn hảo từ loại cà phê rang được phối trộn độc đáo từ những hạt cà phê Robusta và Arabica chất lượng hảo hạng.
+                        <br>
+                        <br>
+                    </p>
+                    <div class="order-now-container">
+                        <a href="OrderTest.aspx?cot=6" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="tm-section">

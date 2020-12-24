@@ -10,8 +10,6 @@ namespace Order
 {
     public partial class OrderTest : Page
     {
-        private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-
         string sCoffeeType, sQuantity, sTopping, sAddOns;
         int count, index;
         double priceAddOns, priceCoffeeType, priceTopping, priceQuantity, totalPrice;
@@ -52,7 +50,7 @@ namespace Order
 
         private DataSet GetTopping()
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             string q = "select * from Items where Type='TO'";
             using (con)
             {
@@ -65,7 +63,7 @@ namespace Order
 
         private DataSet GetAddOns()
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             string q = "select * from Items where Type='AO'";
             using (con)
             {
@@ -78,7 +76,7 @@ namespace Order
 
         private ICollection GetCoffee()
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             string q = "select Name,Prize from Items where Type='CF' ORDER BY Category";
             using (con)
             {

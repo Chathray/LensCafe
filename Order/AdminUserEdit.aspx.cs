@@ -8,8 +8,7 @@ namespace Order
 {
     public partial class AdminUserEdit : Page
     {
-        private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-        SqlConnection con = new SqlConnection(connectionString);
+        SqlConnection con = new SqlConnection(Global.connectionString);
         int id;
         string MemberAddress, MemberPhone, MemberEmail, MemberPassword, MemberRole, MemberUsername;
         Encryption en = new Encryption();

@@ -13,7 +13,7 @@ namespace Order
         string sAddOns, sTopping, sFlavor = "", status;
 
         int num, orderId, intQuantity;
-        SqlConnection con = new SqlConnection(connectionString);
+        SqlConnection con = new SqlConnection(Global.connectionString);
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace Order
 
                     lblUsername.Text += username;
                     lblEmail.Text += email;
-                    lblName.Text += name;
+                    lblAddress.Text += name;
                     lblPhone.Text += phone;
                     lblMemberId.Text += MemberId;
 
@@ -233,7 +233,7 @@ namespace Order
 
         private DataSet GetTopping()
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             string q = "select * from Items where Type='TO'";
             using (con)
             {
@@ -246,7 +246,7 @@ namespace Order
 
         private DataSet GetAddOns()
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             string q = "select * from Items where Type='AO'";
             using (con)
             {

@@ -1,7 +1,11 @@
-﻿namespace Order
+﻿using System.Web.Configuration;
+
+namespace Order
 {
     public class Global
     {
+        public static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
+
         private static string orderId;
         private static string memberId;
 

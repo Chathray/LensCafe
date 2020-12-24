@@ -10,7 +10,6 @@ namespace Order
 {
     public partial class Menu : Page
     {
-        private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.MaintainScrollPositionOnPostBack = true;
@@ -33,7 +32,7 @@ namespace Order
 
         private ICollection GetCategory()
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             string q = "SELECT DISTINCT Category FROM Items";
             using (con)
             {
@@ -52,7 +51,7 @@ namespace Order
         {
             string outp = "";
             DataView d;
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             string q = "SELECT * FROM Items WHERE Category=N'" + name + "'";
             using (con)
             {

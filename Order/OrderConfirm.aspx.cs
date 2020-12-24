@@ -8,7 +8,6 @@ namespace Order
     {
         string sCoffeeType, sQuantity, sTopping, sAddOns;
         double totalPrice;
-        private string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +29,7 @@ namespace Order
 
         protected void submitConfirm_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(connectionString);
+            SqlConnection con = new SqlConnection(Global.connectionString);
             con.Open();
 
             string insertData = "INSERT INTO Orders (MemberId, Flavor, Quantity, Topping, AddOns, TotalPrice, Status)";

@@ -15,63 +15,26 @@
         </div>
 
         <br />
-        <br />
 
         <asp:Label runat="server" Text="Mã đơn hàng: " ID="lblOrderId" CssClass="OrderLabels"></asp:Label>
 
         <br />
+        <br />
 
         <asp:Label runat="server" Text="Trạng thái: " ID="lblStatus" CssClass="OrderLabels"></asp:Label>
 
-        <br />
-
         <div id="divAdminOutput" runat="server" visible="false">
-            <table>
-                <tr>
-                    <td>
-                        <asp:Label runat="server" Text="Tên tài khoản: " ID="lblUsernameDisplay" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                    <td class="tableOrderDetails">
-                        <asp:Label runat="server" Text="" ID="lblUsername" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label runat="server" Text="Email: " ID="lblEmailDisplay" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                    <td class="tableOrderDetails">
-                        <asp:Label runat="server" Text="" ID="lblEmail" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label runat="server" Text="Địa chỉ: " ID="lblNameDisplay" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                    <td class="tableOrderDetails">
-                        <asp:Label runat="server" Text="" ID="lblName" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label runat="server" Text="Số điện thoại: " ID="lblPhoneDisplay" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                    <td class="tableOrderDetails">
-                        <asp:Label runat="server" Text="" ID="lblPhone" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label runat="server" Text="Mã khách hàng: " ID="lblMemberIdDisplay" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                    <td class="tableOrderDetails">
-                        <asp:Label runat="server" Text="" ID="lblMemberId" CssClass="OrderLabels"></asp:Label>
-                    </td>
-                </tr>
-            </table>
-
+            <asp:Label runat="server" ID="lblMemberId" CssClass="OrderLabels"><i class="fa fa-ellipsis-h"></i>  </asp:Label>
+            <br />
+            <asp:Label runat="server" ID="lblUsername" CssClass="OrderLabels"><i class="fa fa-ellipsis-h"></i>  </asp:Label>
+            <br />
+            <asp:Label runat="server" ID="lblEmail" CssClass="OrderLabels"><i class="fa fa-ellipsis-h"></i>  </asp:Label>
+            <br />
+            <asp:Label runat="server" ID="lblAddress" CssClass="OrderLabels"><i class="fa fa-ellipsis-h"></i>  </asp:Label>
+            <br />
+            <asp:Label runat="server" ID="lblPhone" CssClass="OrderLabels"><i class="fa fa-ellipsis-h"></i>  </asp:Label>
             <br />
             <br />
-
             <asp:Label runat="server" Text="Trạng thái: " ID="lblStatusAdmin" CssClass="OrderLabels"></asp:Label>
             <asp:DropDownList ID="statusDropDown" runat="server" CssClass="form-control">
             </asp:DropDownList>
@@ -80,7 +43,7 @@
         <br />
         <br />
 
-        <asp:Label runat="server" Text="Loại Coffee:" ID="lblCoffee" CssClass="OrderLabels"></asp:Label>
+        <asp:Label runat="server" Text="Tên hàng:" ID="lblCoffee" CssClass="OrderLabels"></asp:Label>
         <asp:Label runat="server" Text="" ID="lblCoffeeType" CssClass="OrderDetails"></asp:Label>
 
         <br />
