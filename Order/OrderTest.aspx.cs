@@ -117,7 +117,7 @@ namespace Order
                         index++;
                     }
                 }
-                sAddOns = sAddOns.Remove(sAddOns.Length - 2);
+                sAddOns = sAddOns != "" ? sAddOns.Remove(sAddOns.Length - 2) : "";
 
                 //calculate total price
                 priceCoffeeType = Convert.ToDouble(coffeeType.SelectedValue);
