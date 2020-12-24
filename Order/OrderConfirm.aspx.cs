@@ -24,31 +24,7 @@ namespace Order
             totalPrice = Convert.ToDouble(Session["TotalPrice"].ToString());
 
             //coffee types
-            switch (sCoffeeType)
-            {
-                case "Classic Cappuccino":
-                    image.ImageUrl = "images/cappuccino/cappuccino.jpg";
-                    break;
-                case "Iced Cappuccino":
-                    image.ImageUrl = "images/cappuccino/iced cappuccino.jpg";
-                    break;
-                case "Classic Americano":
-                    image.ImageUrl = "images/americano/americano.jpg";
-                    break;
-                case "Classic Latte":
-                    image.ImageUrl = "images/latte/latte.jpg";
-                    break;
-                case "Vanilla Latte":
-                    image.ImageUrl = "images/latte/vanilla latte.jpg";
-                    break;
-                case "Caramel Latte":
-                    image.ImageUrl = "images/latte/caramel latte.jpg";
-                    break;
-                case "Mocha Latte":
-                    image.ImageUrl = "images/latte/mocha latte.jpg";
-                    break;
-            }
-
+            image.ImageUrl = "images/" + sCoffeeType + ".jpg";
             outputs();
         }
 

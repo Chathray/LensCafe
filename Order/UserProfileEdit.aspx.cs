@@ -37,7 +37,7 @@ namespace Order
             //get data
             while (reader.Read())
             {
-                dbName = reader["MemberName"].ToString();
+                dbName = reader["MemberAddress"].ToString();
                 dbPhone = reader["MemberPhone"].ToString();
                 dbEmail = reader["MemberEmail"].ToString();
                 dbUsername = reader["MemberUsername"].ToString();
@@ -47,7 +47,7 @@ namespace Order
             //set into fill
             lblEmail.Text = dbEmail;
             txtboxUsername.Text = dbUsername;
-            txtboxName.Text = dbName;
+            txtboxAddress.Text = dbName;
             txtboxPhone.Text = dbPhone;
         }
 
@@ -60,11 +60,11 @@ namespace Order
                 customUsername.IsValid)
             {
                 string editUsername = txtboxUsername.Text;
-                string editName = txtboxName.Text;
+                string editName = txtboxAddress.Text;
                 string editPhone = txtboxPhone.Text;
 
                 string updateQuery = "UPDATE Members SET MemberUsername='" + editUsername + "', ";
-                updateQuery += "MemberName=N'" + editName + "', ";
+                updateQuery += "MemberAddress=N'" + editName + "', ";
                 updateQuery += "MemberPhone='" + editPhone + "' ";
                 updateQuery += "WHERE MemberId='" + Session["MemberId"].ToString() + "'";
 

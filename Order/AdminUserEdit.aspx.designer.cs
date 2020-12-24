@@ -177,22 +177,22 @@ namespace Order
         protected global::System.Web.UI.WebControls.DropDownList ddlRole;
 
         /// <summary>
-        /// lblMemberName control.
+        /// lblMemberAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMemberName;
+        protected global::System.Web.UI.WebControls.Label lblMemberAddress;
 
         /// <summary>
-        /// txtboxName control.
+        /// txtboxAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtboxName;
+        protected global::System.Web.UI.WebControls.TextBox txtboxAddress;
 
         /// <summary>
         /// reqName control.

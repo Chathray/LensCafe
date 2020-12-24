@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label runat="server" Text="Họ và tên: " ID="lblNameDisplay" CssClass="OrderLabels"></asp:Label>
+                        <asp:Label runat="server" Text="Địa chỉ: " ID="lblNameDisplay" CssClass="OrderLabels"></asp:Label>
                     </td>
                     <td class="tableOrderDetails">
                         <asp:Label runat="server" Text="" ID="lblName" CssClass="OrderLabels"></asp:Label>
@@ -73,7 +73,7 @@
             <br />
 
             <asp:Label runat="server" Text="Trạng thái: " ID="lblStatusAdmin" CssClass="OrderLabels"></asp:Label>
-            <asp:DropDownList ID="statusDropDown" runat="server" CssClass="inputs">
+            <asp:DropDownList ID="statusDropDown" runat="server" CssClass="form-control">
             </asp:DropDownList>
         </div>
 
@@ -87,7 +87,7 @@
         <br />
 
         <asp:Label runat="server" Text="Số lượng:" ID="lblQuantity" CssClass="OrderLabels"></asp:Label>
-        <asp:TextBox ID="quantity" runat="server" TextMode="Number" CssClass="inputs"></asp:TextBox>
+        <asp:TextBox ID="quantity" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="requiredQuantity" runat="server" ControlToValidate="quantity" EnableClientScript="False" ErrorMessage="Số lượng là bắt buộc!" ForeColor="Red"></asp:RequiredFieldValidator>
         <asp:RangeValidator ID="rangeQuantity" runat="server" ErrorMessage="Số phải từ 1 đến 12" EnableClientScript="False" ControlToValidate="quantity" MaximumValue="12" MinimumValue="1" Type="Integer" ForeColor="Red"></asp:RangeValidator>
 
@@ -97,7 +97,7 @@
         <asp:Label runat="server" Text="Lớp phủ:" ID="lblTopping" CssClass="OrderLabels"></asp:Label>
         <asp:RadioButtonList ID="topping" runat="server" CssClass="inputs rblListitems">
         </asp:RadioButtonList>
-        <asp:RequiredFieldValidator ID="requiredTopping" runat="server" ControlToValidate="topping" EnableClientScript="False" ErrorMessage="Topping is required!" ForeColor="Red"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="requiredTopping" runat="server" ControlToValidate="topping" EnableClientScript="False" ErrorMessage="Chưa chọn lớp phủ" ForeColor="Red"></asp:RequiredFieldValidator>
 
         <br />
 

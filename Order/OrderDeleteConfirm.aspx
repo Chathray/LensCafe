@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="outputDelete" runat="server" class="SetToCenter form-bg-color">
-        <asp:Label ID="lblDeleteMsg" runat="server" Text="Bạn có chắc chắn muốn xóa đơn đặt hàng này không?" CssClass="OrderLabels"></asp:Label>
+        <asp:Label ID="lblDeleteMsg" runat="server" Text="Bạn có chắc chắn muốn xóa đơn hàng này không?" CssClass="OrderLabels"></asp:Label>
         <br />
         <asp:Button ID="submitDelete" runat="server" Text="Chắc chắn" OnClick="submitDelete_Click" CssClass="btnShort"/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

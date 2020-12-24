@@ -27,7 +27,6 @@
     <div class="container" id="main">
         <section class="tm-section row">
             <h3 class="col-lg-12 margin-bottom-30">Hãy kết nối với chúng tôi</h3>
-            <form action="#" method="post" class="tm-contact-form">
                 <div class="col-lg-6 col-md-6">
                     <div class="form-group">
                         <input type="text" id="contact_name" class="form-control" placeholder="Tên của bạn" />
@@ -42,7 +41,7 @@
                         <textarea id="contact_message" class="form-control" rows="6" placeholder="Nội dung"></textarea>
                     </div>
                     <div class="form-group">
-                        <button class="tm-more-button" type="submit" name="submit">Gửi</button>
+                        <button class="tm-more-button" type="button" name="submit">Gửi</button>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -50,7 +49,6 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.315434677589!2d109.21278561434144!3d13.759841700815437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316f6cea4cbc15bd%3A0xc257226e6bc47b71!2sLens%20Coffee!5e0!3m2!1svi!2s!4v1606654770575!5m2!1svi!2s" width="100%" height="100%" style="border: 0;" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
-            </form>
         </section>
     </div>
 </asp:Content>

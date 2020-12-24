@@ -11,7 +11,7 @@ namespace Order
         private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
         SqlConnection con = new SqlConnection(connectionString);
         int id;
-        string MemberName, MemberPhone, MemberEmail, MemberPassword, MemberRole, MemberUsername;
+        string MemberAddress, MemberPhone, MemberEmail, MemberPassword, MemberRole, MemberUsername;
         Encryption en = new Encryption();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Order
             //get data
             while (reader.Read())
             {
-                MemberName = reader["MemberName"].ToString();
+                MemberAddress = reader["MemberAddress"].ToString();
                 MemberPhone = reader["MemberPhone"].ToString();
                 MemberEmail = reader["MemberEmail"].ToString();
                 MemberPassword = en.Decrypt(reader["MemberPassword"].ToString());
@@ -62,7 +62,7 @@ namespace Order
             txtboxUsername.Text = MemberUsername;
             txtboxEmail.Text = MemberEmail;
             txtboxPassword.Text = MemberPassword;
-            txtboxName.Text = MemberName;
+            txtboxAddress.Text = MemberAddress;
             txtboxPhone.Text = MemberPhone;
 
             ddlRole.Items.Add(new ListItem(MemberRole, MemberRole));
@@ -102,14 +102,14 @@ namespace Order
                 string editEmail = txtboxEmail.Text;
                 string editPassword = txtboxPassword.Text;
                 string editRole = ddlRole.SelectedValue;
-                string editName = txtboxName.Text;
+                string editName = txtboxAddress.Text;
                 string editPhone = txtboxPhone.Text;
 
                 string updateQuery = "UPDATE Members SET MemberUsername='" + editUsername + "', ";
                 updateQuery += "MemberEmail='" + editEmail + "', ";
                 updateQuery += "MemberPassword='" + en.Encrypt(editPassword) + "', ";
                 updateQuery += "MemberRole='" + editRole + "', ";
-                updateQuery += "MemberName=N'" + editName + "', ";
+                updateQuery += "MemberAddress=N'" + editName + "', ";
                 updateQuery += "MemberPhone='" + editPhone + "' ";
                 updateQuery += "WHERE MemberId=" + id;
 

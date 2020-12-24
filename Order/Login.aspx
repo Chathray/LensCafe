@@ -9,13 +9,11 @@
         <h1 class="tm-handwriting-font SetToCenter">Đăng Nhập</h1>
         <br>
         <asp:Label ID="lblLoginEmail" runat="server" Text="Email:" CssClass="OrderLabels"></asp:Label>
-        <asp:TextBox ID="loginEmail" runat="server" TextMode="Email" CssClass="inputs"></asp:TextBox>
-        <br>
+        <asp:TextBox ID="loginEmail" runat="server" TextMode="Email" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqLoginEmail" runat="server" ErrorMessage="Email không được để trống!" EnableClientScript="False" ControlToValidate="loginEmail" ForeColor="Coral"></asp:RequiredFieldValidator>
         <br>
         <asp:Label ID="lblLoginPassword" runat="server" Text="Mật khẩu:" CssClass="OrderLabels"></asp:Label>
-        <asp:TextBox ID="loginPassword" runat="server" TextMode="Password" CssClass="inputs"></asp:TextBox>
-        <br>
+        <asp:TextBox ID="loginPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="reqLoginPassword" runat="server" ErrorMessage="Mật khẩu không được để trống!" EnableClientScript="False" ControlToValidate="loginEmail" ForeColor="Coral"></asp:RequiredFieldValidator>
         <br>
         <br>
@@ -23,5 +21,6 @@
         <br>
         <br>
         <asp:Label ID="loginErrorMsg" runat="server" Text="" ForeColor="White" CssClass="btn-danger"></asp:Label>
+        <br>
     </div>
 </asp:Content>

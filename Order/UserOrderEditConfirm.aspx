@@ -9,7 +9,7 @@
         <br />
 
         <div class="SetToCenter">
-            <asp:Label ID="lblMsg" runat="server" Text="Vui lòng kiểm tra kỹ trước khi cập nhật đơn đặt hàng của bạn." CssClass="OrderLabels"></asp:Label>
+            <asp:Label ID="lblMsg" runat="server" Text="Vui lòng kiểm tra kỹ trước khi cập nhật đơn hàng của bạn." CssClass="OrderLabels"></asp:Label>
 
             <br />
             <br />

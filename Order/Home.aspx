@@ -31,51 +31,126 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-4 tm-welcome-img-container">
             <div class="inline-block shadow-img">
-                <img src="images/cappuccino/cappuccino.jpg" alt="Image" class="img-circle img-thumbnail" width="168" height="168">
+                <img src="images/Classic Cappuccino.jpg" alt="Image" class="img-circle img-thumbnail" width="168" height="168">
             </div>
         </div>
     </section>
     <section class="tm-section tm-section-margin-bottom-0 row">
         <div class="col-lg-12 tm-section-header-container">
             <h2 class="tm-section-header gold-text tm-handwriting-font">
-                <img src="img/logo.png" alt="Logo" class="tm-site-logo"> Phổ biến</h2>
+                <img src="img/logo.png" alt="Logo" class="tm-site-logo">
+                Phổ biến</h2>
             <div class="tm-hr-container">
                 <hr class="tm-hr">
             </div>
         </div>
         <div class="col-lg-12 tm-popular-items-container">
             <div class="tm-popular-item">
-                <img src="images/americano/americano.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
+                <img src="images/Classic Americano.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
                 <div class="tm-popular-item-description">
                     <h3 class="tm-handwriting-font2 tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">A</span>mericano</h3>
                     <hr class="tm-popular-item-hr">
-                    <p class="text-limit">Americano là sự kết hợp giữa cà phê espresso thêm vào nước đun sôi. Bạn có thể tùy thích lựa chọn uống nóng hoặc dùng chung với đá.
-</p>
+                    <p class="text-limit">
+                        Americano là sự kết hợp giữa cà phê espresso thêm vào nước đun sôi.
+                        <br>
+                        <br>
+                    </p>
                     <div class="order-now-container">
-                        <a href="#" class="order-now-link tm-handwriting-font2">Xem ngay</a>
+                        <a href="OrderTest.aspx?cot=0" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
                 </div>
             </div>
             <div class="tm-popular-item">
-                <img src="images/cappuccino/cappuccino.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
+                <img src="images/Classic Cappuccino.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
                 <div class="tm-popular-item-description">
                     <h3 class="tm-handwriting-font2 tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">C</span>appuccino</h3>
                     <hr class="tm-popular-item-hr">
-                    <p class="text-limit">Cappuccino của chúng tôi bắt đầu với cà phê espresso, sau đó thêm một lượng tương đương giữa sữa tươi và bọt sữa cho thật hấp dẫn. Bạn có thể tùy thích lựa chọn uống nóng hoặc dùng chung với đá.</p>
+                    <p class="text-limit">
+                        Cappuccino của chúng tôi bắt đầu với cà phê espresso, sau đó thêm một lượng tương đương giữa sữa tươi và bọt sữa cho thật hấp dẫn.
+                        <br>
+                        <br>
+                    </p>
                     <div class="order-now-container">
-                        <a href="#" class="order-now-link tm-handwriting-font2">Xem Ngay</a>
+                        <a href="OrderTest.aspx?cot=4" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
                 </div>
             </div>
             <div class="tm-popular-item">
-                <img src="images/latte/latte.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
+                <img src="images/Classic Latte.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
                 <div class="tm-popular-item-description">
                     <h3 class="tm-handwriting-font2 tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">L</span>atte</h3>
                     <hr class="tm-popular-item-hr">
-                    <p class="text-limit">Latte của chúng tôi bắt đầu với cà phê espresso, sau đó thêm sữa tươi và bọt sữa một cách đầy nghệ thuật. Bạn có thể tùy thích lựa chọn uống nóng hoặc dùng chung với đá.<br><br><br></p>
+                    <p class="text-limit">
+                        Latte của chúng tôi bắt đầu với cà phê espresso, sau đó thêm sữa tươi và bọt sữa một cách đầy nghệ thuật.
+                        <br>
+                        <br>
+                    </p>
                     <div class="order-now-container">
-                        <a href="#" class="order-now-link tm-handwriting-font2">Xem ngay</a>
+                        <a href="OrderTest.aspx?cot=7" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
+                </div>
+            </div>
+            <div class="tm-popular-item">
+                <img src="images/Phin.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
+                <div class="tm-popular-item-description">
+                    <h3 class="tm-handwriting-font2 tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">P</span>hin</h3>
+                    <hr class="tm-popular-item-hr">
+                    <p class="text-limit">
+                        Phối trộn độc đáo giữa hạt Robusta từ cao nguyên Việt Nam, thêm Arabica thơm lừng. Kết hợp với nước sôi từng giọt cà phê được chiết xuất từ Phin truyền thống.
+                        <br>
+                        <br>
+                    </p>
+                    <div class="order-now-container">
+                        <a href="OrderTest.aspx?cot=1" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tm-popular-item">
+                <img src="images/Espresso Macchiato.jpg" alt="Popular" class="tm-popular-item-img" width="286" height="220">
+                <div class="tm-popular-item-description">
+                    <h3 class="tm-handwriting-font2 tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">M</span>acchiato</h3>
+                    <hr class="tm-popular-item-hr">
+                    <p class="text-limit">
+                        Ly cà phê Macchiato bắt đầu từ dòng sữa tươi và lớp bọt sữa béo ngậy, sau đó hòa quyện cùng cà phê espresso đậm đà.
+                        <br>
+                        <br>
+                    </p>
+                    <div class="order-now-container">
+                        <a href="OrderTest.aspx?cot=11" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tm-section">
+        <div class="row">
+            <div class="col-lg-12 tm-section-header-container">
+                <h2 class="tm-section-header gold-text tm-handwriting-font">
+                    <img src="img/logo.png" alt="Logo" class="tm-site-logo">
+                    Hôm nay</h2>
+                <div class="tm-hr-container">
+                    <hr class="tm-hr">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="tm-daily-menu-container margin-top-60">
+                <div class="col-lg-4 col-md-4">
+                    <img src="images/Daily.jpg" alt="Menu board" class="tm-daily-menu-img">
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <p><em><b>Black Tea Macchiato </b>(trà đen Macchiato) là thức uống hiện nay rất được ưa chuộng tại hệ thống The Coffee House, Hot and Cold… Bạn cũng có thể tự chuẩn bị cho mình một ly Black Tea Macchiato vừa ngon vừa chất lượng, đúng sở thích nếu như không có thời gian đến với các cửa hàng thức uống.</em></p>
+                    <ol class="margin-top-30">
+                        <p><strong>Công thức chung:</strong></p>
+                        <li>Topping Base: 15 ml</li>
+                        <li>Sữa tươi: 30 ml</li>
+                        <li>Kem béo Rich’s: 15 ml</li>
+                        <li>Frappe choice: 10 ml</li>
+                        <li>Muối trắng: 1/8 muỗng</li>
+                        <li>Trà ô long (1 túi lọc): 5 gr</li>
+                        <li>Đường cát trắng: 15 gr</li>
+                    </ol>
+                    <a href="https://dayphache.edu.vn/cach-lam-black-tea-macchiato" rel="nofollow">Xem tiếp...</a>
                 </div>
             </div>
         </div>

@@ -61,10 +61,10 @@
                             </div>
                             <nav class="tm-nav">
                                 <ul>
-                                    <li><a id="homeButton" runat="server" href="Home.aspx">Trang Chủ</a></li>
-                                    <li><a id="menuButton" runat="server" href="Menu.aspx">Thực Đơn</a></li>
-                                    <li><a id="contactButton" runat="server" href="Contact.aspx">Liên Hệ</a></li>
-                                    <li><a id="coffeeButton" runat="server" href="OrderTest.aspx">Đặt Hàng Ngay</a></li>
+                                    <li><a id="homeButton" runat="server" style="font-size: 13px;" href="Home.aspx">Trang Chủ</a></li>
+                                    <li><a id="menuButton" runat="server" style="font-size: 13px;" href="Menu.aspx">Thực Đơn</a></li>
+                                    <li><a id="contactButton" runat="server" style="font-size: 13px;" href="Contact.aspx">Liên Hệ</a></li>
+                                    <li><a id="coffeeButton" runat="server" style="font-size: 13px;" href="OrderTest.aspx">Đặt Hàng Ngay</a></li>
                                     <li id="btnLoginSwitch" runat="server"></li>
                                 </ul>
                             </nav>

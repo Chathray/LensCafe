@@ -28,25 +28,25 @@ namespace Order
             if (Session["MemberEmail"] != null)
             {
                 btnLoginSwitch.InnerHtml = "<div class='dropdown'>";
-                btnLoginSwitch.InnerHtml += "<a runat='server' class='dropdown' id='displayName'>" + Session["MemberUsername"].ToString() + "</a>";
+                btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' class='dropdown' id='displayName'>" + Session["MemberUsername"].ToString() + "</a>";
                 btnLoginSwitch.InnerHtml += "<div class='dropdown-content'>";
-                btnLoginSwitch.InnerHtml += "<a runat='server' href='UserProfileEdit.aspx'>Hồ Sơ</a>";
-                btnLoginSwitch.InnerHtml += "<a runat='server' href='UserOrderRepeater.aspx'>Đơn hàng của tôi</a>";
+                btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' href='UserProfileEdit.aspx'>Hồ Sơ</a>";
+                btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' href='UserOrderRepeater.aspx'>Đơn hàng của tôi</a>";
 
                 if (Session["MemberRole"].ToString() == "admin")
                 {
-                    btnLoginSwitch.InnerHtml += "<a runat='server' href='AdminUserOrder.aspx'>Đơn Khách Hàng</a>";
-                    btnLoginSwitch.InnerHtml += "<a runat='server' href='AdminUserTable.aspx'>Thành Viên</a>";
+                    btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' href='AdminUserOrder.aspx'>Đơn Khách Hàng</a>";
+                    btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' href='AdminUserTable.aspx'>Thành Viên</a>";
                 }
 
-                btnLoginSwitch.InnerHtml += "<a runat='server' href='Logout.aspx'>Đăng Xuất</a>";
+                btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' href='Logout.aspx'>Đăng Xuất</a>";
                 btnLoginSwitch.InnerHtml += "</div>";
                 btnLoginSwitch.InnerHtml += "</div>";
             }
             else
             {
-                btnLoginSwitch.InnerHtml = "<a id='loginButton' runat='server' href='Login.aspx'>Đăng Nhập</a>";
-                btnLoginSwitch.InnerHtml += "<a id='registerButton' runat='server' href='Register.aspx'>Đăng Ký</a>";
+                btnLoginSwitch.InnerHtml = "<a id='loginButton' runat='server' style='font-size: 13px;' href='Login.aspx'>Đăng Nhập</a>";
+                btnLoginSwitch.InnerHtml += "<a id='registerButton' runat='server' style='font-size: 13px;' href='Register.aspx'>Đăng Ký</a>";
             }
         }
     }

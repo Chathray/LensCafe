@@ -38,18 +38,7 @@
             <div class="col-lg-3 col-md-3">
                 <div class="tm-position-relative margin-bottom-30">
                     <nav class="tm-side-menu">
-                        <ul>
-                            <li data-stt="1" class="menu-fuzzy"><a>Affogato</a></li>
-                            <li data-stt="2" class="menu-fuzzy"><a class="active">Café Americano</a></li>
-                            <li data-stt="3" class="menu-fuzzy"><a>Café latte</a></li>
-                            <li data-stt="4" class="menu-fuzzy"><a>Coffee milk</a></li>
-                            <li data-stt="5" class="menu-fuzzy"><a>Café mocha</a></li>
-                            <li data-stt="6" class="menu-fuzzy"><a>Cappuccino</a></li>
-                            <li data-stt="7" class="menu-fuzzy"><a>Espresso</a></li>
-                            <li data-stt="8" class="menu-fuzzy"><a>Iced coffee</a></li>
-                            <li data-stt="9" class="menu-fuzzy"><a>Instant coffee</a></li>
-                            <li data-stt="10" class="menu-fuzzy"><a>Mocha</a></li>
-                            <li data-stt="11" class="menu-fuzzy"><a>Black coffee</a></li>
+                        <ul id="hanbu" runat="server">
                         </ul>
                     </nav>
                     <img src="img/vertical-menu-bg.png" alt="Menu bg" class="tm-side-menu-bg">
@@ -59,13 +48,13 @@
             <div id="menuContent" class="tm-menu-product-content col-lg-9 col-md-9">
                 <!-- menu content -->
                 <div class="tm-product">
-                    <img src="images/americano/americano.jpg" alt="Product" class="imgmenu">
+                    <img src="images/Classic Americano.jpg" alt="Product" class="imgmenu">
                     <div class="tm-product-text">
                         <h3 class="tm-product-title">Classic Americano</h3>
-                        <p class="tm-product-description">Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance.</p>
+                        <p class="tm-product-description">Americano là sự kết hợp giữa cà phê espresso thêm vào nước đun sôi.</p>
                     </div>
                     <div class="tm-product-price">
-                        <a href="#" class="tm-product-price-link tm-handwriting-font text-center">$30</a>
+                        <a class="tm-product-price-link tm-handwriting-font text-center">$20.00</a>
                     </div>
                 </div>
             </div>

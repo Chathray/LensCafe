@@ -29,7 +29,7 @@ namespace Order
                     if (ds.Tables[0].Rows.Count == 0)
                     {
                         orderTable.Attributes["class"] = "SetToCenter";
-                        orderTable.InnerHtml = "<h4>Bạn chưa có bất kỳ đơn đặt hàng nào</h4>";
+                        orderTable.InnerHtml = "<h4>Bạn chưa có bất kỳ đơn hàng nào</h4>";
                     }
                     else
                     {
@@ -55,34 +55,7 @@ namespace Order
 
         public string GetImage(string coffee)
         {
-            string path = "";
-
-            switch (coffee)
-            {
-                case "Classic Cappuccino":
-                    path = "images/cappuccino/cappuccino.jpg";
-                    break;
-                case "Iced Cappuccino":
-                    path = "images/cappuccino/iced cappuccino.jpg";
-                    break;
-                case "Classic Americano":
-                    path = "images/americano/americano.jpg";
-                    break;
-                case "Classic Latte":
-                    path = "images/latte/latte.jpg";
-                    break;
-                case "Vanilla Latte":
-                    path = "images/latte/vanilla latte.jpg";
-                    break;
-                case "Caramel Latte":
-                    path = "images/latte/caramel latte.jpg";
-                    break;
-                case "Mocha Latte":
-                    path = "images/latte/mocha latte.jpg";
-                    break;
-            }
-
-            return path;
+            return "images/" + coffee + ".jpg";
         }
 
         protected void sendOrderID(object sender, EventArgs e)

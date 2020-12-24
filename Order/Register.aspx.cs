@@ -55,7 +55,7 @@ namespace Order
 
                     //insert query
                     string insertSQL;
-                    insertSQL = "INSERT INTO Members (MemberName, MemberPhone, MemberEmail, MemberPassword, MemberRole, MemberUsername)";
+                    insertSQL = "INSERT INTO Members (MemberAddress, MemberPhone, MemberEmail, MemberPassword, MemberRole, MemberUsername)";
                     insertSQL += "VALUES (N'";
                     insertSQL += name + "', '";
                     insertSQL += phone + "', '";

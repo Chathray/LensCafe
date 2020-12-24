@@ -22,7 +22,7 @@ namespace Order
             {
                 if (Session["MemberEmail"] == null)
                 {
-                    Response.Redirect("Login.aspx");
+                    Server.Transfer("Login.aspx");
                 }
 
                 coffeeType.DataTextField = topping.DataTextField = addOns.DataTextField = "Name";
@@ -38,7 +38,9 @@ namespace Order
                 addOns.DataSource = GetAddOns();
                 addOns.DataBind();
 
-                coffeeType.SelectedIndex = 0;
+                _ = int.TryParse(Request.QueryString["cot"], out int si);
+                coffeeType.SelectedIndex = si;
+
                 topping.SelectedIndex = 4;
                 addOns.SelectedIndex = 3;
             }
@@ -77,7 +79,7 @@ namespace Order
         private ICollection GetCoffee()
         {
             SqlConnection con = new SqlConnection(connectionString);
-            string q = "select Name,Prize from Items where Type='CF'";
+            string q = "select Name,Prize from Items where Type='CF' ORDER BY Category";
             using (con)
             {
                 SqlDataAdapter da = new SqlDataAdapter(q, con);

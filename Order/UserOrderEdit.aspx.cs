@@ -52,7 +52,7 @@ namespace Order
 
                     while (rdrUser.Read())
                     {
-                        name = rdrUser["MemberName"].ToString();
+                        name = rdrUser["MemberAddress"].ToString();
                         username = rdrUser["MemberUsername"].ToString();
                         phone = rdrUser["MemberPhone"].ToString();
                         email = rdrUser["MemberEmail"].ToString();
@@ -127,30 +127,7 @@ namespace Order
                 con.Close();
 
                 //coffee types
-                switch (sFlavor)
-                {
-                    case "Classic Cappuccino":
-                        image.ImageUrl = "images/cappuccino/cappuccino.jpg";
-                        break;
-                    case "Iced Cappuccino":
-                        image.ImageUrl = "images/cappuccino/iced cappuccino.jpg";
-                        break;
-                    case "Classic Americano":
-                        image.ImageUrl = "images/americano/americano.jpg";
-                        break;
-                    case "Classic Latte":
-                        image.ImageUrl = "images/latte/latte.jpg";
-                        break;
-                    case "Vanilla Latte":
-                        image.ImageUrl = "images/latte/vanilla latte.jpg";
-                        break;
-                    case "Caramel Latte":
-                        image.ImageUrl = "images/latte/caramel latte.jpg";
-                        break;
-                    case "Mocha Latte":
-                        image.ImageUrl = "images/latte/mocha latte.jpg";
-                        break;
-                }
+                image.ImageUrl = "images/" + sFlavor + ".jpg";
 
                 lblStatus.Text += status;
                 lblCoffeeType.Text += sFlavor;
