@@ -11,6 +11,21 @@ if (window.history.replaceState) {
 -----------------------------------------*/
 $(document).ready(function () {
 
+    $("#dataGrid").DataTable({
+        "columnDefs":
+            [
+                { "width": "5%", "targets": 0 },
+                { "width": "10%", "targets": 1 },
+                { "width": "15%", "targets": 2 },
+                { "width": "8%", "targets": 3 },
+                { "width": "7%", "targets": 4 },
+                { "width": "22%", "targets": 5 },
+                { "width": "10%", "targets": 6 },
+                { "width": "10%", "targets": 7 },
+            ],
+    });
+
+
     $("#ContentPlaceHolder1_coffeeType").change(function () {
         $("#ContentPlaceHolder1_hf_ddl").val(this.selectedIndex);
     });
@@ -46,6 +61,8 @@ $(document).ready(function () {
 
             success: function (output) {
                 $('#menuContent').html(output.d);
+
+                document.getElementById("papa").scrollIntoView({ block: "start", behavior: "smooth" });
             }
         });
     });

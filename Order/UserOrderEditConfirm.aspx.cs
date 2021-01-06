@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Web.Configuration;
 
 namespace Order
 {
@@ -26,6 +25,7 @@ namespace Order
             editQuantity = Convert.ToInt32(Session["editQuantity"].ToString());
             editTopping = Session["editTopping"].ToString();
             editAddOns = Session["editAddOns"].ToString();
+            if (editAddOns == "") editAddOns = "Không";
             totalPrice = Convert.ToDouble(Session["editTotalPrice"].ToString());
 
             //coffee types
@@ -61,10 +61,16 @@ namespace Order
                 //check if record was successfully inserted
                 if (added > 0)
                 {
+                    string peertype = Request.QueryString["peer"];
+
                     output.InnerHtml = "<div class='SetToCenter'>";
                     output.InnerHtml += "<label id='orderEditSucess'>Đơn hàng đã được cập nhật.</label>";
                     output.InnerHtml += "<br />";
-                    output.InnerHtml += "<a href='UserOrderRepeater.aspx'>Đi tới Đơn hàng của tôi</a>";
+                    if (peertype == "00" || peertype == "10")
+                        output.InnerHtml += "<a href='UserOrderRepeater.aspx'>Đi tới Đơn hàng của tôi</a>";
+                    else if (peertype == "11")
+                        output.InnerHtml += "<a href='AdminOrderRepeater.aspx'>Quay lại Đơn khách hàng</a>";
+
                     output.InnerHtml += "&nbsp;&nbsp;&nbsp;&nbsp;";
                     output.InnerHtml += "<a href='Home.aspx'>Trang chủ</a>";
                     output.InnerHtml += "</div>";

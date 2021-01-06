@@ -35,7 +35,7 @@ namespace Order
 
                 if (Session["MemberRole"].ToString() == "admin")
                 {
-                    btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' href='AdminUserOrder.aspx'>Đơn Khách Hàng</a>";
+                    btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' href='AdminOrderRepeater.aspx'>Đơn Khách Hàng</a>";
                     btnLoginSwitch.InnerHtml += "<a runat='server' style='font-size: 13px;' href='AdminUserTable.aspx'>Thành Viên</a>";
                 }
 

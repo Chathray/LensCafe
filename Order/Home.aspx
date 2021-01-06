@@ -56,7 +56,7 @@
                         <br>
                     </p>
                     <div class="order-now-container">
-                        <a href="OrderTest.aspx?cot=0" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                        <a href="OrderTest.aspx?x=Classic Americano" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                         <br>
                     </p>
                     <div class="order-now-container">
-                        <a href="OrderTest.aspx?cot=4" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                        <a href="OrderTest.aspx?x=Classic Cappuccino" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                         <br>
                     </p>
                     <div class="order-now-container">
-                        <a href="OrderTest.aspx?cot=7" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                        <a href="OrderTest.aspx?x=Classic Latte" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                         <br>
                     </p>
                     <div class="order-now-container">
-                        <a href="OrderTest.aspx?cot=1" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                        <a href="OrderTest.aspx?x=Phin" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                         <br>
                     </p>
                     <div class="order-now-container">
-                        <a href="OrderTest.aspx?cot=11" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                        <a href="OrderTest.aspx?x=Espresso Macchiato" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                         <br>
                     </p>
                     <div class="order-now-container">
-                        <a href="OrderTest.aspx?cot=6" class="order-now-link tm-handwriting-font2">Mua ngay</a>
+                        <a href="OrderTest.aspx?x=Espresso" class="order-now-link tm-handwriting-font2">Mua ngay</a>
                     </div>
                 </div>
             </div>

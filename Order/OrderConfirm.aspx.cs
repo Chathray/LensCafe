@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Web.Configuration;
 
 namespace Order
 {
     public partial class OrderConfirm : System.Web.UI.Page
     {
-        string sCoffeeType, sQuantity, sTopping, sAddOns;
+        string sCoffeeType, sQuantity, sTopping, sAddOns, timeAt;
         double totalPrice;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -20,7 +19,11 @@ namespace Order
             sQuantity = Session["Quantity"].ToString();
             sTopping = Session["Topping"].ToString();
             sAddOns = Session["AddOns"].ToString();
+            if (sAddOns == "") sAddOns = "Không";
             totalPrice = Convert.ToDouble(Session["TotalPrice"].ToString());
+
+            DateTime myDateTime = DateTime.Now;
+            timeAt = myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
 
             //coffee types
             image.ImageUrl = "images/" + sCoffeeType + ".jpg";
@@ -32,15 +35,16 @@ namespace Order
             SqlConnection con = new SqlConnection(Global.connectionString);
             con.Open();
 
-            string insertData = "INSERT INTO Orders (MemberId, Flavor, Quantity, Topping, AddOns, TotalPrice, Status)";
+            string insertData = "INSERT INTO Orders (MemberId, Flavor, Quantity, Topping, AddOns, TotalPrice, Time, Status)";
             insertData += "VALUES ('";
             insertData += Session["MemberId"].ToString() + "', N'";
             insertData += sCoffeeType + "', '";
             insertData += Convert.ToInt32(sQuantity) + "', N'";
             insertData += sTopping + "', N'";
             insertData += sAddOns + "', '";
-            insertData += totalPrice + "', ";
-            insertData += "N'Đang xử lý')";
+            insertData += totalPrice + "', '";
+            insertData += timeAt + "', N'";
+            insertData += "Đang xử lý')";
 
             SqlCommand cmdInsertData = new SqlCommand(insertData, con);
             int added = 0;

@@ -44,7 +44,6 @@
                     <img src="img/vertical-menu-bg.png" alt="Menu bg" class="tm-side-menu-bg">
                 </div>
             </div>
-
             <div id="menuContent" class="tm-menu-product-content col-lg-9 col-md-9">
                 <!-- menu content -->
                 <div class="tm-product">
@@ -54,7 +53,7 @@
                         <p class="tm-product-description">Americano là sự kết hợp giữa cà phê espresso thêm vào nước đun sôi.</p>
                     </div>
                     <div class="tm-product-price">
-                        <a class="tm-product-price-link tm-handwriting-font text-center">$20.00</a>
+                        <a href="OrderTest.aspx?x=Classic Americano" class="tm-product-price-link tm-handwriting-font text-center">$20.00</a>
                     </div>
                 </div>
             </div>

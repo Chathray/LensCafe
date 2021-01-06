@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.Configuration;
 using System.Web.Services;
 using System.Web.UI;
 
@@ -77,7 +76,7 @@ namespace Order
                     "<p class='tm-product-description'>" + Info + "</p>" +
                     "</div>" +
                     "<div class='tm-product-price'>" +
-                    "<a class='tm-product-price-link tm-handwriting-font'>$" + Price + "</a>" +
+                    "<a href='OrderTest.aspx?x=" + Name + "' class='tm-product-price-link tm-handwriting-font'>$" + Price + "</a>" +
                     "</div>" +
                     "</div>";
             }

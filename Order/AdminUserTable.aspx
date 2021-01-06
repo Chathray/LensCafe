@@ -6,36 +6,49 @@
     <div class="TableBackground">
         <h1 class="tm-handwriting-font SetToCenter">Danh sách thành viên</h1>
         <br>
-        <table border="1" class="TableCss">
+        <table id="dataGrid" class="TableCss row-border">
             <thead>
                 <tr>
-                    <th style="width:5%;">ID</th>
-                    <th style="width:10%;">Username</th>
-                    <th style="width:17%;">Email</th>
-                    <th style="width:13%;">Password</th>
-                    <th style="width:7%;">Role</th>
-                    <th style="width:28%;">Address</th>
-                    <th style="width:12%;">Phone</th>
-                    <th style="width:8%;"></th>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th></th>
                 </tr>
-                </thead>
-                    <asp:Repeater ID="MemberTableRepeater" runat="server">
-                        <ItemTemplate>
-                            <tr>
-                                <td><%# Eval("MemberId") %></td>
-                                <td><%# Eval("MemberUsername") %></td>
-                                <td><%# Eval("MemberEmail") %></td>
-                                <td><%# Eval("MemberPassword") %></td>
-                                <td><%# Eval("MemberRole") %></td>
-                                <td><%# Eval("MemberAddress") %></td>
-                                <td><%# Eval("MemberPhone") %></td>
-                                <td>
-                                    <asp:LinkButton ID="UserEditLinkBtn" runat="server" CommandArgument='<%# Eval("MemberId") %>' OnClick="userEditLinkBtn_Click" CssClass="text-primary"><b>Cập nhật</b></asp:LinkButton>
-                                    <asp:LinkButton ID="UserDeleteLinkBtn" runat="server" CommandArgument='<%# Eval("MemberId") %>' OnClick="userDeleteLinkBtn_Click" CssClass="text-danger"><b>Xoá</b></asp:LinkButton>
-                                </td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:Repeater>
+            </thead>
+            <asp:Repeater ID="MemberTableRepeater" runat="server">
+                <ItemTemplate>
+                    <tr>
+                        <td><%# Eval("MemberId") %></td>
+                        <td><%# Eval("MemberUsername") %></td>
+                        <td><%# Eval("MemberEmail") %></td>
+                        <td><%# Eval("MemberPassword") %></td>
+                        <td><%# Eval("MemberRole") %></td>
+                        <td><%# Eval("MemberAddress") %></td>
+                        <td><%# Eval("MemberPhone") %></td>
+                        <td>
+                            <asp:LinkButton ID="UserEditLinkBtn" runat="server" CommandArgument='<%# Eval("MemberId") %>' OnClick="userEditLinkBtn_Click" CssClass="text-primary">Cập nhật</asp:LinkButton>
+                            <asp:LinkButton ID="UserDeleteLinkBtn" runat="server" CommandArgument='<%# Eval("MemberId") %>' OnClick="userDeleteLinkBtn_Click" CssClass="text-danger">Xoá</asp:LinkButton>
+                        </td>
+                    </tr>
+                </ItemTemplate>
+            </asp:Repeater>
+            <tfoot>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th></th>
+                </tr>
+            </tfoot>
         </table>
     </div>
+
 </asp:Content>

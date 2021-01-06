@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
-using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -36,11 +35,12 @@ namespace Order
                 addOns.DataSource = GetAddOns();
                 addOns.DataBind();
 
-                _ = int.TryParse(Request.QueryString["cot"], out int si);
-                coffeeType.SelectedIndex = si;
+                coffeeType.ClearSelection();
+                string flavor = Request.QueryString["x"];
+                coffeeType.SelectedIndex = coffeeType.Items.IndexOf(coffeeType.Items.FindByText(flavor));
+                hf_ddl.Value = coffeeType.SelectedIndex.ToString();
 
                 topping.SelectedIndex = 4;
-                addOns.SelectedIndex = 3;
             }
         }
 
@@ -51,7 +51,7 @@ namespace Order
         private DataSet GetTopping()
         {
             SqlConnection con = new SqlConnection(Global.connectionString);
-            string q = "select * from Items where Type='TO'";
+            string q = "select * from Optional where Type='TO'";
             using (con)
             {
                 SqlDataAdapter da = new SqlDataAdapter(q, con);
@@ -64,7 +64,7 @@ namespace Order
         private DataSet GetAddOns()
         {
             SqlConnection con = new SqlConnection(Global.connectionString);
-            string q = "select * from Items where Type='AO'";
+            string q = "select * from Optional where Type='AO'";
             using (con)
             {
                 SqlDataAdapter da = new SqlDataAdapter(q, con);
@@ -77,7 +77,7 @@ namespace Order
         private ICollection GetCoffee()
         {
             SqlConnection con = new SqlConnection(Global.connectionString);
-            string q = "select Name,Prize from Items where Type='CF' ORDER BY Category";
+            string q = "select Name,Prize from Items ORDER BY Category";
             using (con)
             {
                 SqlDataAdapter da = new SqlDataAdapter(q, con);
@@ -120,7 +120,7 @@ namespace Order
                 sAddOns = sAddOns != "" ? sAddOns.Remove(sAddOns.Length - 2) : "";
 
                 //calculate total price
-                priceCoffeeType = Convert.ToDouble(coffeeType.SelectedValue);
+                priceCoffeeType = Convert.ToDouble(coffeeType.Items[index].Value);
                 priceTopping = sTopping != "" ? Convert.ToDouble(topping.SelectedValue) : 0.0;
                 priceQuantity = sQuantity != "" ? Convert.ToDouble(sQuantity) : 0.0;
                 //loop for Add-Ons price

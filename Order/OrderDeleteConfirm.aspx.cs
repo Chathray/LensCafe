@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Web.Configuration;
 
 namespace Order
 {
@@ -35,12 +34,12 @@ namespace Order
                 if (delete > 0)
                 {
                     outputDelete.InnerHtml = "<label>Đơn hàng này đã bị xóa.</label> <br />";
-                    string peertype = Request.QueryString["peertype"];
+                    string peertype = Request.QueryString["peer"];
 
                     if (peertype == "00" || peertype == "10")
                         outputDelete.InnerHtml += "<a href='UserOrderRepeater.aspx'>Quay lại Đơn hàng của tôi</a>";
                     else if (peertype == "11")
-                        outputDelete.InnerHtml += "<a href='AdminUserOrder.aspx'>Quay lại Đơn khách hàng</a>";
+                        outputDelete.InnerHtml += "<a href='AdminOrderRepeater.aspx'>Quay lại Đơn khách hàng</a>";
                 }
                 else
                 {

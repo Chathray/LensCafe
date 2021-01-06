@@ -10,7 +10,7 @@ namespace Order
     public partial class UserOrderEdit : Page
     {
         private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
-        string sAddOns, sTopping, sFlavor = "", status;
+        string sAddOns, sTopping, sFlavor = "", status, peertype;
 
         int num, orderId, intQuantity;
         SqlConnection con = new SqlConnection(Global.connectionString);
@@ -208,21 +208,20 @@ namespace Order
                 Session["editTopping"] = editTopping;
                 Session["editAddOns"] = editAddOns;
                 Session["editTotalPrice"] = totalPrice.ToString();
-
+                
                 if (Session["MemberRole"].ToString() == "admin")
                 {
                     Session["editStatus"] = statusDropDown.SelectedValue.ToString();
                 }
-
-                Server.Transfer("UserOrderEditConfirm.aspx");
+                peertype = Request.QueryString["peer"];
+                Server.Transfer("UserOrderEditConfirm.aspx?peer=" + peertype);
             }
         }
 
         protected void submitDelete_Click(object sender, EventArgs e)
         {
-            string peertype = Request.QueryString["peertype"];
-
-            Response.Redirect("OrderDeleteConfirm.aspx?peertype=" + peertype);
+            peertype = Request.QueryString["peer"];
+            Response.Redirect("OrderDeleteConfirm.aspx?peer=" + peertype);
         }
 
         private void setCoffee()
@@ -234,7 +233,7 @@ namespace Order
         private DataSet GetTopping()
         {
             SqlConnection con = new SqlConnection(Global.connectionString);
-            string q = "select * from Items where Type='TO'";
+            string q = "select * from Optional where Type='TO'";
             using (con)
             {
                 SqlDataAdapter da = new SqlDataAdapter(q, con);
@@ -247,7 +246,7 @@ namespace Order
         private DataSet GetAddOns()
         {
             SqlConnection con = new SqlConnection(Global.connectionString);
-            string q = "select * from Items where Type='AO'";
+            string q = "select * from Optional where Type='AO'";
             using (con)
             {
                 SqlDataAdapter da = new SqlDataAdapter(q, con);

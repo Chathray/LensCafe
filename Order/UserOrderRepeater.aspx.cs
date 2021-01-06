@@ -68,9 +68,9 @@ namespace Order
             string orderId = btn.CommandArgument;
             Global.OrderId = orderId;
             if (Session["MemberRole"].ToString() == "admin")
-                Response.Redirect("UserOrderEdit.aspx?peertype=10");
+                Response.Redirect("UserOrderEdit.aspx?peer=10");
             else if (Session["MemberRole"].ToString() == "user")
-                Response.Redirect("UserOrderEdit.aspx?peertype=00");
+                Response.Redirect("UserOrderEdit.aspx?peer=00");
 
         }
     }
