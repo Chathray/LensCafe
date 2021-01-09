@@ -143,6 +143,7 @@
     <Content Include="UserPasswordEdit.aspx" />
     <Content Include="UserProfileEdit.aspx" />
     <Content Include="Web.config" />
+    <Content Include="LensAPI.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminUserDelete.aspx.cs">
@@ -287,6 +288,10 @@
     </Compile>
     <Compile Include="UserProfileEdit.aspx.designer.cs">
       <DependentUpon>UserProfileEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LensAPI.asmx.cs">
+      <DependentUpon>LensAPI.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

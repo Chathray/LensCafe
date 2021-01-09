@@ -40,7 +40,9 @@
             <div class="page-header">
                 <div class="row align-items-center mb-3">
                     <div class="col-sm">
-                        <h2 class="page-header-title">Thống kê đơn hàng <span id="coutable" runat="server" class="badge badge-soft-dark ml-2"></span></h2>
+                        <a href="Home.aspx">
+                            <h2 class="page-header-title"><span class="text-warning">Lens </span><span class="text-primary">Café</span></h2>
+                        </a>
                     </div>
                     <div class="col-sm-auto">
                         <!-- Nav -->
@@ -50,15 +52,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="today-tab" data-toggle="tab" href="#weekly" role="tab" aria-selected="false">Hôm nay
+                                <a class="nav-link" id="today-tab" data-toggle="tab" href="#today" role="tab" aria-selected="false">Hôm nay
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="weekly-tab" data-toggle="tab" href="#weekly" role="tab" aria-selected="false">Tuần này
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="monthly-tab" data-toggle="tab" href="#monthly" role="tab" aria-selected="false">Tháng này
                                 </a>
                             </li>
                         </ul>
@@ -68,132 +66,109 @@
             </div>
             <!-- End Page Header -->
 
+            <div class="card card-body mb-3 mb-lg-5" style="margin-top: 1.5rem;">
+                <div class="row gx-lg-4">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="card-subtitle">Hôm nay</h6>
+                                <span id="thomnay" runat="server" class="card-title h3"></span>
+
+                                <div class="d-flex align-items-center">
+                                    <span id="chomnay" runat="server" class="d-block font-size-sm"></span>
+                                </div>
+                            </div>
+
+                            <span class="icon icon-sm icon-soft-light icon-circle ml-3 bg-info">
+                                <i class="tio-time"></i>
+                            </span>
+                        </div>
+
+                        <div class="d-lg-none">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 column-divider-sm">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="card-subtitle">Đã thanh toán</h6>
+                                <span id="tdathanhtoan" runat="server" class="card-title h3"></span>
+
+                                <div class="d-flex align-items-center">
+                                    <span id="cdathanhtoan" runat="server" class="d-block font-size-sm"></span>
+                                </div>
+                            </div>
+
+                            <span class="icon icon-sm icon-soft-light icon-circle ml-3 bg-success">
+                                <i class="tio-done"></i>
+                            </span>
+                        </div>
+
+                        <div class="d-lg-none">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 column-divider-lg">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="card-subtitle">Đang chờ</h6>
+                                <span id="tdancho" runat="server" class="card-title h3"></span>
+
+                                <div class="d-flex align-items-center">
+                                    <span id="cdancho" runat="server" class="d-block font-size-sm"></span>
+                                </div>
+                            </div>
+
+                            <span class="icon icon-sm icon-soft-light icon-circle ml-3 bg-warning">
+                                <i class="tio-infinity"></i>
+                            </span>
+                        </div>
+
+                        <div class="d-sm-none">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 column-divider-sm">
+                        <div class="media">
+                            <div class="media-body">
+                                <h6 class="card-subtitle">Tổng cộng</h6>
+                                <span id="tdoanhthu" runat="server" class="card-title h3"></span>
+
+                                <div class="d-flex align-items-center">
+                                    <span id="cdoanhthu" runat="server" class="d-block font-size-sm"></span>
+                                </div>
+                            </div>
+
+                            <span class="icon icon-sm icon-soft-light icon-circle ml-3 bg-primary">
+                                <i class="tio-wishlist-outlined"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Card -->
             <div class="card">
                 <!-- Header -->
                 <div class="card-header">
                     <div class="row justify-content-between align-items-center flex-grow-1">
-                        <div class="col-lg-6 mb-3 mb-lg-0">
+                        <div class="col-12 col-md">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button id="js-daterangepicker-predefined" class="btn btn-sm btn-white dropdown-toggle mb-2 mb-sm-0">
+                                    <i class="tio-date-range"></i>
+                                    <span class="js-daterangepicker-predefined-preview ml-1"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
                             <!-- Filter -->
                             <div class="row align-items-sm-center">
-                                <div class="col-sm-auto pr-0">
-                                    <div class="d-flex align-items-center">
-
-                                        <!-- Select -->
-                                        <div class="col-auto">
-                                            <div class="row align-items-center g-0">
-                                                <div class="col-auto">Từ ngày:</div>
-                                                <!-- Flatpickr -->
-                                                <div id="projectDeadlineFlatpickr" class="js-flatpickr flatpickr-custom flatpickr-custom-borderless col input-group input-group-sm" data-hs-flatpickr-options="{
-                                &quot;appendTo&quot;: &quot;#projectDeadlineFlatpickr&quot;,
-                                &quot;dateFormat&quot;: &quot;d/m/Y&quot;,
-                                &quot;wrap&quot;: true
-                              }"
-                                                    style="width: 0px;">
-                                                    <input id="mind" type="text" class="flatpickr-custom-form-control form-control flatpickr-input" placeholder="Chọn ngày" data-input="" value="" readonly="readonly">
-                                                    <div class="flatpickr-calendar animate" tabindex="-1">
-                                                        <div class="flatpickr-months">
-                                                            <span class="flatpickr-prev-month"><i class="tio-chevron-left flatpickr-custom-arrow"></i></span>
-                                                            <div class="flatpickr-month">
-                                                                <div class="flatpickr-current-month">
-                                                                    <select class="flatpickr-monthDropdown-months" aria-label="Month" tabindex="-1">
-                                                                        <option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">January</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">February</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option>
-                                                                    </select><div class="numInputWrapper">
-                                                                        <input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <span class="flatpickr-next-month"><i class="tio-chevron-right flatpickr-custom-arrow"></i></span>
-                                                        </div>
-                                                        <div class="flatpickr-innerContainer">
-                                                            <div class="flatpickr-rContainer">
-                                                                <div class="flatpickr-weekdays">
-                                                                    <div class="flatpickr-weekdaycontainer">
-                                                                        <span class="flatpickr-weekday">Mo</span><span class="flatpickr-weekday">Tu</span><span class="flatpickr-weekday">We</span><span class="flatpickr-weekday">Th</span><span class="flatpickr-weekday">Fr</span><span class="flatpickr-weekday">Sa</span><span class="flatpickr-weekday">Su
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flatpickr-days" tabindex="-1">
-                                                                    <div class="dayContainer"><span class="flatpickr-day prevMonthDay" aria-label="December 27, 2021" tabindex="-1">27</span><span class="flatpickr-day prevMonthDay" aria-label="December 28, 2021" tabindex="-1">28</span><span class="flatpickr-day prevMonthDay" aria-label="December 29, 2021" tabindex="-1">29</span><span class="flatpickr-day prevMonthDay" aria-label="December 30, 2021" tabindex="-1">30</span><span class="flatpickr-day prevMonthDay" aria-label="December 31, 2021" tabindex="-1">31</span><span class="flatpickr-day " aria-label="January 1, 2022" tabindex="-1">1</span><span class="flatpickr-day " aria-label="January 2, 2022" tabindex="-1">2</span><span class="flatpickr-day " aria-label="January 3, 2022" tabindex="-1">3</span><span class="flatpickr-day " aria-label="January 4, 2022" tabindex="-1">4</span><span class="flatpickr-day " aria-label="January 5, 2022" tabindex="-1">5</span><span class="flatpickr-day " aria-label="January 6, 2022" tabindex="-1">6</span><span class="flatpickr-day " aria-label="January 7, 2022" tabindex="-1">7</span><span class="flatpickr-day selected" aria-label="January 8, 2022" tabindex="-1">8</span><span class="flatpickr-day " aria-label="January 9, 2022" tabindex="-1">9</span><span class="flatpickr-day " aria-label="January 10, 2022" tabindex="-1">10</span><span class="flatpickr-day " aria-label="January 11, 2022" tabindex="-1">11</span><span class="flatpickr-day " aria-label="January 12, 2022" tabindex="-1">12</span><span class="flatpickr-day " aria-label="January 13, 2022" tabindex="-1">13</span><span class="flatpickr-day " aria-label="January 14, 2022" tabindex="-1">14</span><span class="flatpickr-day " aria-label="January 15, 2022" tabindex="-1">15</span><span class="flatpickr-day " aria-label="January 16, 2022" tabindex="-1">16</span><span class="flatpickr-day " aria-label="January 17, 2022" tabindex="-1">17</span><span class="flatpickr-day " aria-label="January 18, 2022" tabindex="-1">18</span><span class="flatpickr-day " aria-label="January 19, 2022" tabindex="-1">19</span><span class="flatpickr-day " aria-label="January 20, 2022" tabindex="-1">20</span><span class="flatpickr-day " aria-label="January 21, 2022" tabindex="-1">21</span><span class="flatpickr-day " aria-label="January 22, 2022" tabindex="-1">22</span><span class="flatpickr-day " aria-label="January 23, 2022" tabindex="-1">23</span><span class="flatpickr-day " aria-label="January 24, 2022" tabindex="-1">24</span><span class="flatpickr-day " aria-label="January 25, 2022" tabindex="-1">25</span><span class="flatpickr-day " aria-label="January 26, 2022" tabindex="-1">26</span><span class="flatpickr-day " aria-label="January 27, 2022" tabindex="-1">27</span><span class="flatpickr-day " aria-label="January 28, 2022" tabindex="-1">28</span><span class="flatpickr-day " aria-label="January 29, 2022" tabindex="-1">29</span><span class="flatpickr-day " aria-label="January 30, 2022" tabindex="-1">30</span><span class="flatpickr-day " aria-label="January 31, 2022" tabindex="-1">31</span><span class="flatpickr-day nextMonthDay" aria-label="February 1, 2022" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="February 2, 2022" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="February 3, 2022" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="February 4, 2022" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="February 5, 2022" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="February 6, 2022" tabindex="-1">6</span></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Flatpickr -->
-                                            </div>
-                                        </div>
-                                        <!-- End Select -->
-
-                                        <!-- Select -->
-                                        <div class="col-auto">
-                                            <div class="row align-items-center g-0">
-                                                <div class="col-auto">Đến ngày:</div>
-                                                <!-- Flatpickr -->
-                                                <div id="projectDeadlineFlatpickr1" class="js-flatpickr flatpickr-custom flatpickr-custom-borderless col input-group input-group-sm" data-hs-flatpickr-options="{
-                                &quot;appendTo&quot;: &quot;#projectDeadlineFlatpickr1&quot;,
-                                &quot;dateFormat&quot;: &quot;d/m/Y&quot;,
-                                &quot;wrap&quot;: true
-                              }"
-                                                    style="width: 0px;">
-                                                    <input id="maxd" type="text" class="flatpickr-custom-form-control form-control flatpickr-input" placeholder="Chọn ngày" data-input="" value="" readonly="readonly">
-                                                    <div class="flatpickr-calendar animate" tabindex="-1">
-                                                        <div class="flatpickr-months">
-                                                            <span class="flatpickr-prev-month"><i class="tio-chevron-left flatpickr-custom-arrow"></i></span>
-                                                            <div class="flatpickr-month">
-                                                                <div class="flatpickr-current-month">
-                                                                    <select class="flatpickr-monthDropdown-months" aria-label="Month" tabindex="-1">
-                                                                        <option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">January</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">February</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option>
-                                                                        <option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option>
-                                                                    </select><div class="numInputWrapper">
-                                                                        <input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <span class="flatpickr-next-month"><i class="tio-chevron-right flatpickr-custom-arrow"></i></span>
-                                                        </div>
-                                                        <div class="flatpickr-innerContainer">
-                                                            <div class="flatpickr-rContainer">
-                                                                <div class="flatpickr-weekdays">
-                                                                    <div class="flatpickr-weekdaycontainer">
-                                                                        <span class="flatpickr-weekday">Mo</span><span class="flatpickr-weekday">Tu</span><span class="flatpickr-weekday">We</span><span class="flatpickr-weekday">Th</span><span class="flatpickr-weekday">Fr</span><span class="flatpickr-weekday">Sa</span><span class="flatpickr-weekday">Su
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flatpickr-days" tabindex="-1">
-                                                                    <div class="dayContainer"><span class="flatpickr-day prevMonthDay" aria-label="December 27, 2021" tabindex="-1">27</span><span class="flatpickr-day prevMonthDay" aria-label="December 28, 2021" tabindex="-1">28</span><span class="flatpickr-day prevMonthDay" aria-label="December 29, 2021" tabindex="-1">29</span><span class="flatpickr-day prevMonthDay" aria-label="December 30, 2021" tabindex="-1">30</span><span class="flatpickr-day prevMonthDay" aria-label="December 31, 2021" tabindex="-1">31</span><span class="flatpickr-day " aria-label="January 1, 2022" tabindex="-1">1</span><span class="flatpickr-day " aria-label="January 2, 2022" tabindex="-1">2</span><span class="flatpickr-day " aria-label="January 3, 2022" tabindex="-1">3</span><span class="flatpickr-day " aria-label="January 4, 2022" tabindex="-1">4</span><span class="flatpickr-day " aria-label="January 5, 2022" tabindex="-1">5</span><span class="flatpickr-day " aria-label="January 6, 2022" tabindex="-1">6</span><span class="flatpickr-day " aria-label="January 7, 2022" tabindex="-1">7</span><span class="flatpickr-day selected" aria-label="January 8, 2022" tabindex="-1">8</span><span class="flatpickr-day " aria-label="January 9, 2022" tabindex="-1">9</span><span class="flatpickr-day " aria-label="January 10, 2022" tabindex="-1">10</span><span class="flatpickr-day " aria-label="January 11, 2022" tabindex="-1">11</span><span class="flatpickr-day " aria-label="January 12, 2022" tabindex="-1">12</span><span class="flatpickr-day " aria-label="January 13, 2022" tabindex="-1">13</span><span class="flatpickr-day " aria-label="January 14, 2022" tabindex="-1">14</span><span class="flatpickr-day " aria-label="January 15, 2022" tabindex="-1">15</span><span class="flatpickr-day " aria-label="January 16, 2022" tabindex="-1">16</span><span class="flatpickr-day " aria-label="January 17, 2022" tabindex="-1">17</span><span class="flatpickr-day " aria-label="January 18, 2022" tabindex="-1">18</span><span class="flatpickr-day " aria-label="January 19, 2022" tabindex="-1">19</span><span class="flatpickr-day " aria-label="January 20, 2022" tabindex="-1">20</span><span class="flatpickr-day " aria-label="January 21, 2022" tabindex="-1">21</span><span class="flatpickr-day " aria-label="January 22, 2022" tabindex="-1">22</span><span class="flatpickr-day " aria-label="January 23, 2022" tabindex="-1">23</span><span class="flatpickr-day " aria-label="January 24, 2022" tabindex="-1">24</span><span class="flatpickr-day " aria-label="January 25, 2022" tabindex="-1">25</span><span class="flatpickr-day " aria-label="January 26, 2022" tabindex="-1">26</span><span class="flatpickr-day " aria-label="January 27, 2022" tabindex="-1">27</span><span class="flatpickr-day " aria-label="January 28, 2022" tabindex="-1">28</span><span class="flatpickr-day " aria-label="January 29, 2022" tabindex="-1">29</span><span class="flatpickr-day " aria-label="January 30, 2022" tabindex="-1">30</span><span class="flatpickr-day " aria-label="January 31, 2022" tabindex="-1">31</span><span class="flatpickr-day nextMonthDay" aria-label="February 1, 2022" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="February 2, 2022" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="February 3, 2022" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="February 4, 2022" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="February 5, 2022" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="February 6, 2022" tabindex="-1">6</span></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- End Flatpickr -->
-                                            </div>
-                                        </div>
-                                        <!-- End Select -->
-
-
+                                <div class="col-sm-auto">
+                                    <div class="d-flex align-items-center mr-2">
                                         <span class="text-secondary">Tình trạng:</span>
 
                                         <!-- Select -->
@@ -211,28 +186,28 @@
                                             <option value="Đã hủy">Đã hủy</option>
                                         </select>
                                         <!-- End Select -->
+
                                     </div>
+                                </div>
+
+                                <div class="col-md">
+                                    <form>
+                                        <!-- Search -->
+                                        <div class="input-group input-group-merge input-group-flush">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="tio-search"></i>
+                                                </div>
+                                            </div>
+                                            <input id="datatableSearch" type="search" class="form-control" placeholder="Tìm kiếm" aria-label="Search">
+                                        </div>
+                                        <!-- End Search -->
+                                    </form>
                                 </div>
                             </div>
                             <!-- End Filter -->
-
-                        </div>
-                        <div class="col-auto">
-                            <form>
-                                <!-- Search -->
-                                <div class="input-group input-group-merge input-group-flush">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i class="tio-search"></i>
-                                        </div>
-                                    </div>
-                                    <input id="datatableSearch" type="search" class="form-control" placeholder="Tìm kiếm" aria-label="Search">
-                                </div>
-                                <!-- End Search -->
-                            </form>
                         </div>
                     </div>
-                    <!-- End Row -->
                 </div>
                 <!-- End Header -->
 
@@ -265,11 +240,11 @@
                                             <label class="custom-control-label" for="datatableCheckAll"></label>
                                         </div>
                                     </th>
-                                    <th class="table-column-pl-0">UID</th>
+                                    <th>UID</th>
                                     <th>ID</th>
                                     <th>Tên hàng</th>
                                     <th>Số lượng</th>
-                                    <th>Thời gian</th>
+                                    <th>Ngày</th>
                                     <th>Lớp phủ</th>
                                     <th>Bổ sung</th>
                                     <th>Tổng tiền</th>
@@ -289,7 +264,7 @@
                                         </td>
 
                                         <td><%# Eval("MemberId") %></td>
-                                        <td><%# Eval("OrderId") %></td>
+                                        <td class="text-primary"><%# Eval("OrderId") %></td>
 
                                         <td>
                                             <a class="">
@@ -298,25 +273,38 @@
                                         </td>
 
                                         <td><%# Eval("Quantity") %></td>
-                                        <td><%# Eval("Time", "{0:dd/MM/yyyy}") %></td>
+                                        <td><%# Eval("Date", "{0:dd/MM/yyyy}") %></td>
                                         <td><%# Eval("Topping") %></td>
                                         <td><%# Eval("AddOns") %></td>
                                         <td><%# Eval("TotalPrice") %></td>
-                                        <td><%# Eval("Status") %></td>
+
+
+                                        <td>
+                                            <span class="legend-indicator <%#GetCheckMark(Eval("Status").ToString())%>"></span><%# Eval("Status") %>
+                                        </td>
+
+
                                         <td>
                                             <div class="btn-group" role="group">
-                                                <asp:LinkButton ID="orderLinkButton" runat="server" CssClass="btn btn-sm btn-white" CommandArgument='<%# Eval("OrderId").ToString() %>' OnClick="viewOrderID">
+                                                <asp:LinkButton ID="orderLinkButton" runat="server" CssClass="btn btn-sm btn-white" CommandArgument='<%# Eval("OrderId").ToString() %>' OnClick="ViewOrder">
                                                 <i class="tio-visible-outlined"></i> Xem
                                                 </asp:LinkButton>
 
                                                 <!-- Unfold -->
                                                 <div class="hs-unfold btn-group">
-                                                    <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white dropdown-toggle dropdown-toggle-empty" href="javascript:;" data-hs-unfold-options="{&quot;target&quot;: &quot;#ordersExportDropdown<%# Eval("OrderId") %>&quot;,&quot;type&quot;: &quot;css-animation&quot;,&quot;smartPositionOffEl&quot;: &quot;#datatable&quot;}"
-                                                        data-hs-unfold-target="#ordersExportDropdown<%# Eval("OrderId") %>" data-hs-unfold-invoker=""></a>
-                                                    <div id="ordersExportDropdown<%# Eval("OrderId") %>" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right mt-1 hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated" data-hs-target-height="324" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInUp" data-hs-unfold-content-animation-out="fadeOut" style="animation-duration: 300ms;">
+                                                    <a class="js-hs-unfold-invoker btn btn-icon btn-sm btn-white dropdown-toggle dropdown-toggle-empty" href="javascript:;" data-hs-unfold-options="{&quot;target&quot;: &quot;#ordersDropdown<%# Eval("OrderId") %>&quot;,&quot;type&quot;: &quot;css-animation&quot;,&quot;smartPositionOffEl&quot;: &quot;#datatable&quot;}"
+                                                        data-hs-unfold-target="#ordersDropdown<%# Eval("OrderId") %>" data-hs-unfold-invoker=""></a>
+                                                    <div id="ordersDropdown<%# Eval("OrderId") %>" class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-sm dropdown-menu-right mt-1 hs-unfold-hidden hs-unfold-content-initialized hs-unfold-css-animation animated" data-hs-target-height="324" data-hs-unfold-content="" data-hs-unfold-content-animation-in="slideInUp" data-hs-unfold-content-animation-out="fadeOut" style="animation-duration: 300ms;">
 
-                                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="dropdown-item" CommandArgument='<%# Eval("OrderId").ToString() %>' OnClick="delOrderID">
-                                                            <i class="tio-delete-outlined dropdown-item-icon"></i> Xóa
+                                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="dropdown-item" CommandArgument='<%# Eval("OrderId").ToString() %>' OnClick="DoneOrder">
+                                                            <i class="tio-done dropdown-item-icon"></i> Xác nhận
+                                                        </asp:LinkButton>
+                                                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="dropdown-item" CommandArgument='<%# Eval("OrderId").ToString() %>' OnClick="CancelOrder">
+                                                            <i class="tio-clear dropdown-item-icon"></i> Hủy đơn
+                                                        </asp:LinkButton>
+                                                        <div class="dropdown-divider"></div>
+                                                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="dropdown-item" CommandArgument='<%# Eval("OrderId").ToString() %>' OnClick="DelOrder">
+                                                            <i class="tio-remove dropdown-item-icon"></i> Xóa
                                                         </asp:LinkButton>
 
                                                     </div>
@@ -494,7 +482,7 @@
                                                 </div>
 
                                                 <div class="d-flex justify-content-between align-items-center mb-3">
-                                                    <span class="mr-2">Thời gian</span>
+                                                    <span class="mr-2">Ngày tạo</span>
 
                                                     <!-- Checkbox 5 -->
                                                     <label class="toggle-switch toggle-switch-sm" for="toggleColumn_date">
@@ -981,31 +969,27 @@
 
     <!-- JS Plugins Init. -->
     <script>
-
-        function getd(today) {
-            var dd = String(today.getDate()).padStart(2, '0');
-            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var yyyy = today.getFullYear();
-
-            today = dd + '/' + mm + '/' + yyyy;
-
-            return today;
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
         }
+
+        var start = moment("19900101", "YYYYMMDD");
+        var end = moment();
 
         $.fn.dataTableExt.afnFiltering.push(
             function (oSettings, aData, iDataIndex) {
-                var min = $('#mind').val();
-                var max = $('#maxd').val();
+                if (start === "" && end === "") return true;
+
+                var min = start.format('DD/MM/YYYY');
+                var max = end.format('DD/MM/YYYY')
                 var cur = aData[5];
 
                 min = min.substring(6, 10) + min.substring(3, 5) + min.substring(0, 2);
                 max = max.substring(6, 10) + max.substring(3, 5) + max.substring(0, 2);
                 cur = cur.substring(6, 10) + cur.substring(3, 5) + cur.substring(0, 2);
 
-                if (min === "" && max === "") {
-                    return true;
-                }
-                else if (min <= cur && max === "") {
+
+                if (min <= cur && max === "") {
                     return true;
                 }
                 else if (max >= cur && min === "") {
@@ -1021,36 +1005,19 @@
         $(document).on('ready', function () {
 
             $('#all-time-tab').click(function () {
-                $('#mind').val('').trigger('change'); $('#maxd').val('');
+                cb(moment("01011990", "DDMMYYYY"), moment());
             });
 
             $('#today-tab').click(function () {
-                var today = new Date();
-                today = getd(today);
-
-                $('#mind').val(today).trigger('change'); $('#maxd').val(today);
+                var today = moment();
+                cb(today, today);
             });
 
             $('#weekly-tab').click(function () {
-                var date = new Date();
-
-                var first = date.getDate() - date.getDay();
-                var last = first + 6; 
-
-                var f = new Date(date.getFullYear(), date.getMonth(), first);
-                var l = new Date(date.getFullYear(), date.getMonth(), last);
-
-                $('#mind').val(getd(f)).trigger('change'); $('#maxd').val(getd(l));
+                var from_date = moment().startOf('isoWeek');
+                var to_date = moment().endOf('isoWeek')
+                cb(from_date, to_date);
             });
-
-            $('#monthly-tab').click(function () {
-                var date = new Date();
-                var f = new Date(date.getFullYear(), date.getMonth(), 1);
-                var l = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-
-                $('#mind').val(getd(f)).trigger('change'); $('#maxd').val(getd(l));
-            });
-
 
             // INITIALIZATION OF UNFOLD
             // =======================================================
@@ -1079,11 +1046,48 @@
                 var select2 = $.HSCore.components.HSSelect2.init($(this));
             });
 
-            // INITIALIZATION OF FLATPICKR
+
+            // INITIALIZATION OF DATERANGEPICKER
             // =======================================================
-            $('.js-flatpickr').each(function () {
-                $.HSCore.components.HSFlatpickr.init($(this));
+            $('.js-daterangepicker').daterangepicker();
+
+            $('.js-daterangepicker-times').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                    format: 'DD/MM/YYYY hh:mm A'
+                }
             });
+
+            function cb(s, e) {
+                start = s;
+                end = e;
+
+                $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview')
+                    .html(s.format('DD/MM/YYYY') + ' - ' + e.format('DD/MM/YYYY'));
+
+                if (datatable != null)
+                    datatable.draw();
+            }
+
+            $('#js-daterangepicker-predefined').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Hôm nay': [moment(), moment()],
+                    'Hôm qua': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    '7 ngày trước': [moment().subtract(6, 'days'), moment()],
+                    '30 ngày trước': [moment().subtract(29, 'days'), moment()],
+                    'Tháng này': [moment().startOf('month'), moment().endOf('month')],
+                    'Tháng trước': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                    'Năm nay': [moment().startOf('year'), moment().endOf('year')],
+                    'Năm trước': [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')],
+                }
+            }, cb);
+
+            cb(start, end);
+
 
             // INITIALIZATION OF DATATABLES
             // =======================================================
@@ -1127,6 +1131,8 @@
                         '</div>'
                 }
             });
+
+            datatable.columns(1).visible(false);
 
             $('#export-copy').click(function () {
                 datatable.button('.buttons-copy').trigger()
@@ -1176,8 +1182,6 @@
                 datatable.columns(1).visible(e.target.checked)
             })
 
-            datatable.columns(1).visible(false);
-
             $('#toggleColumn_id').change(function (e) {
                 datatable.columns(2).visible(e.target.checked)
             })
@@ -1212,10 +1216,6 @@
 
             $('#toggleColumn_actions').change(function (e) {
                 datatable.columns(10).visible(e.target.checked)
-            })
-
-            $("#mind").bind("change paste keyup", function () {
-                datatable.draw();
             })
         });
     </script>

@@ -9,7 +9,6 @@ namespace Order
 {
     public partial class UserOrderEdit : Page
     {
-        private static string connectionString = WebConfigurationManager.ConnectionStrings["userConn"].ConnectionString;
         string sAddOns, sTopping, sFlavor = "", status, peertype;
 
         int num, orderId, intQuantity;
@@ -64,11 +63,17 @@ namespace Order
                     statusDropDown.Items.FindByText(dbStatus).Selected = true;
                     switch (dbStatus)
                     {
-                        case "Đang xử lý":
-                            statusDropDown.Items.Add(new ListItem("Đã xác nhận", "Đã xác nhận"));
+                        case "Đang chờ":
+                            statusDropDown.Items.Add(new ListItem("Đã thanh toán", "Đã thanh toán"));
+                            statusDropDown.Items.Add(new ListItem("Đã hủy", "Đã hủy"));
                             break;
-                        case "Đã xác nhận":
-                            statusDropDown.Items.Add(new ListItem("Đang xử lý", "Đang xử lý"));
+                        case "Đã thanh toán":
+                            statusDropDown.Items.Add(new ListItem("Đang chờ", "Đang chờ"));
+                            statusDropDown.Items.Add(new ListItem("Đã hủy", "Đã hủy"));
+                            break;
+                        case "Đã hủy":
+                            statusDropDown.Items.Add(new ListItem("Đã thanh toán", "Đã thanh toán"));
+                            statusDropDown.Items.Add(new ListItem("Đang chờ", "Đang chờ"));
                             break;
                     }
 
@@ -134,7 +139,7 @@ namespace Order
                 quantity.Text = intQuantity.ToString();
 
 
-                if (status == "Đã xác nhận" && Session["MemberRole"].ToString() == "user")
+                if (status == "Đã thanh toán" && Session["MemberRole"].ToString() == "user")
                 {
                     quantity.ReadOnly = true;
                     topping.Enabled = false;

@@ -5,7 +5,7 @@ namespace Order
 {
     public partial class OrderConfirm : System.Web.UI.Page
     {
-        string sCoffeeType, sQuantity, sTopping, sAddOns, timeAt;
+        string sCoffeeType, sQuantity, sTopping, sAddOns, da;
         double totalPrice;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +23,7 @@ namespace Order
             totalPrice = Convert.ToDouble(Session["TotalPrice"].ToString());
 
             DateTime myDateTime = DateTime.Now;
-            timeAt = myDateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            da = myDateTime.ToString("M/d/yyyy");
 
             //coffee types
             image.ImageUrl = "images/" + sCoffeeType + ".jpg";
@@ -35,7 +35,7 @@ namespace Order
             SqlConnection con = new SqlConnection(Global.connectionString);
             con.Open();
 
-            string insertData = "INSERT INTO Orders (MemberId, Flavor, Quantity, Topping, AddOns, TotalPrice, Time, Status)";
+            string insertData = "INSERT INTO Orders (MemberId, Flavor, Quantity, Topping, AddOns, TotalPrice, Date, Status)";
             insertData += "VALUES ('";
             insertData += Session["MemberId"].ToString() + "', N'";
             insertData += sCoffeeType + "', '";
@@ -43,8 +43,8 @@ namespace Order
             insertData += sTopping + "', N'";
             insertData += sAddOns + "', '";
             insertData += totalPrice + "', '";
-            insertData += timeAt + "', N'";
-            insertData += "Đang xử lý')";
+            insertData += da + "', N'";
+            insertData += "Đang chờ')";
 
             SqlCommand cmdInsertData = new SqlCommand(insertData, con);
             int added = 0;

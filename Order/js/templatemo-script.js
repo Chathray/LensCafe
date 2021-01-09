@@ -54,8 +54,8 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: "Menu.aspx/SayHello",
-            data: "{'name':'" + tan + "'}",
+            url: "LensAPI.asmx/GetMenuItem",
+            data: "{'cate':'" + tan + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
 
