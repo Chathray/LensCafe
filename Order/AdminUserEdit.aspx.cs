@@ -157,7 +157,7 @@ namespace Order
             setMemberId();
 
             con.Open();
-            string checkUsernameExist = "select count(*) from Members where MemberUsername='" + txtboxUsername.Text.ToLower() + "'";
+            string checkUsernameExist = "select count(*) from Members where MemberUsername='" + txtboxUsername.Text + "'";
             SqlCommand cmdCheckUsername = new SqlCommand(checkUsernameExist, con);
             int usernameExist = Convert.ToInt32(cmdCheckUsername.ExecuteScalar().ToString());
             con.Close();
@@ -170,7 +170,7 @@ namespace Order
                 string dbUsername = cmdUsername.ExecuteScalar().ToString();
                 con.Close();
 
-                if (txtboxUsername.Text.ToLower() == dbUsername)
+                if (txtboxUsername.Text == dbUsername)
                 {
                     args.IsValid = true;
                 }

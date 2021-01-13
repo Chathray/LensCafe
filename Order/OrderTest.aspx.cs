@@ -95,10 +95,6 @@ namespace Order
         {
             if (requiredQuantity.IsValid && rangeQuantity.IsValid && requiredTopping.IsValid)
             {
-                // Giải pháp tạm thời: sử dụng js để lưu giá trị index
-                index = Convert.ToInt32(hf_ddl.Value);
-                sCoffeeType = coffeeType.Items[index].Text;
-
                 sQuantity = quantity.Text != null ? quantity.Text : "";
                 sTopping = topping.SelectedItem != null ? topping.SelectedItem.Text : "";
                 sAddOns = "";
@@ -118,6 +114,11 @@ namespace Order
                     }
                 }
                 sAddOns = sAddOns != "" ? sAddOns.Remove(sAddOns.Length - 2) : "";
+
+                // Giải pháp tạm thời: sử dụng js để lưu giá trị index
+                index = Convert.ToInt32(hf_ddl.Value);
+                sCoffeeType = coffeeType.Items[index].Text;
+
 
                 //calculate total price
                 priceCoffeeType = Convert.ToDouble(coffeeType.Items[index].Value);
